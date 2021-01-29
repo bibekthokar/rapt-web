@@ -1,10 +1,11 @@
 import { Button } from '@material-ui/core';
+import Test from '../components/Test';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Bibek Thokar</h1>
+        <Test />
         <Button color="secondary" variant="contained">
           Hello World
         </Button>
