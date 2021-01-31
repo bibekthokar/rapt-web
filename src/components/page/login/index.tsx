@@ -3,19 +3,21 @@ import { withTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import { Avatar, Grid, Link, Typography } from '@material-ui/core';
 import InputField from '../../bits/core/field/InputField';
-
+import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 interface Props { }
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
     loginForm: {
-        padding: "35px",
-        height: '100vh'
+        padding: "3.5rem",
+        height: '100vh',
+        fontFamily: 'Roboto',
     },
     form: {
-        marginTop: '125px',
-        paddingLeft: '40px',
+        marginTop: '12.5rem',
+        paddingLeft: '4rem',
         '& h2': {
             fontSize: '3rem',
             fontWeight: 'bold',
@@ -23,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
             // color: '#1e2447',
         },
         '& p': {
-            marginTop: '1.3%',
+            marginTop: '1.2rem',
             fontSize: '14px',
             letterSpacing: '1.86',
             color: theme.palette.primary.main,
@@ -41,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     field: {
-        marginTop: '4.1%'
+        marginTop: '3.7rem'
     }
 }));
 const Index = (props: Props) => {
@@ -60,7 +62,10 @@ const Index = (props: Props) => {
                             </Typography>
                         <p>Login Met Monitoring to manage, view and your projects</p>
                         <div className={classes.field}>
-                            <InputField fieldName="email" />
+                            <InputField fieldName="Email"
+                                type="text" icon={<EmailOutlinedIcon />} placeholder="Your email address here" />
+                            <InputField fieldName="Password"
+                                type="password" icon={<LockOutlinedIcon />} placeholder="Your password here" />
                         </div>
                     </div>
                 </Grid>
