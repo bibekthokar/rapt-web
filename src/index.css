@@ -51,6 +51,10 @@ fieldset,input{
   margin:0;
   outline:none;
 }
+button:focus{
+  border:none;
+  outline:none;
+}
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
