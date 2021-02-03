@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import {
   ApolloClient,
   ApolloProvider,
-  createHttpLink,
+  // createHttpLink,
   InMemoryCache,
 } from '@apollo/client';
 
@@ -13,12 +13,12 @@ import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
 import ThemeProvider from './theme/ThemeProvider';
 
-const httpLink = createHttpLink({
-  uri: 'https://www.test.com',
-});
+// const httpLink = createHttpLink({
+//   uri: 'https://www.test.com',
+// });
 
 const client = new ApolloClient({
-  link: httpLink,
+  uri: "https://www.test.com",
   cache: new InMemoryCache(),
 });
 

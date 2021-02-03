@@ -18,8 +18,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -39,8 +39,22 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
 }
-
+img{
+  display:block;
+  width:100%;
+}
+fieldset,input{
+  border:none;
+  padding:0;
+  margin:0;
+  outline:none;
+}
+button:focus{
+  border:none;
+  outline:none;
+}
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
