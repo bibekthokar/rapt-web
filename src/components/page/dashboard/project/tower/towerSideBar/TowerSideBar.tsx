@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
             textDecoration: 'none',
         },
         '& > li:not(:first-child)': {
-            marginTop: '2rem'
+            marginTop: '1.4rem'
         }
     },
     titleWrap: {
@@ -53,6 +53,21 @@ const useStyles = makeStyles((theme) => ({
             marginRight: '1rem'
         }
 
+    },
+    subTitle: {
+        fontSize: '15px',
+        textTransform: 'capitalize',
+        color: 'rgb(255,255 ,255,  .8)',
+        fontWeight: 'normal',
+        display: 'flex',
+        alignItems: 'center',
+        transition: 'all .3s ease-in',
+        '&:hover , &.active': {
+            color: '#fff'
+        },
+        '& svg': {
+            marginRight: '1rem'
+        }
     },
     viewTitle: {
         fontSize: '12px',
@@ -91,7 +106,7 @@ const TowerSideBar = (props: Props) => {
                         towerName.map((items, index) => {
                             return (
                                 <li key={index}>
-                                    <Link className={classes.mainTitle} to="#">
+                                    <Link className={classes.subTitle} to="#">
                                         <TowerSvg />   {items}
                                     </Link>
 
