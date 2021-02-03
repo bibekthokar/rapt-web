@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
     logo: {
         display: 'block',
+        cursor: 'pointer'
     },
     image: {
         height: '100%',
