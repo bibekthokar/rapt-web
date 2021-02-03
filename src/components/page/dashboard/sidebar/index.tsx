@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const IndexSideBar = (props: Props) => {
     const classes = useStyles();
-    const projectName = ['Project name 1', 'Project name 2', 'Project name 3', 'Project name 4', 'Project name 5', 'Project name 6', 'Project name 7', 'Project name 8']
+    const projectName = ['Project name 1', 'Project name 2', 'Project name 3', 'Project name 4', 'Project name 5', 'Project name 6', 'Project name 7', 'Project name 8'];
     return (
         <div className={classes.sideBar}>
             <div className={classes.titleWrap}>
@@ -73,15 +73,14 @@ const IndexSideBar = (props: Props) => {
                     projectName.map((items, index) => {
                         return (
                             <li key={index}>
-                                <Link className={classes.mainTitle} to="#">
+                                <Link className={classes.mainTitle} to="/project/tower">
                                     <FolderOpenIcon />   {items}
                                 </Link>
+
                             </li>
                         )
                     })
                 }
-
-
             </ul>
         </div >
     )
