@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classNames from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
@@ -111,13 +112,26 @@ const useStyles = makeStyles((theme) => ({
             }
         }
 
+    },
+    towerSubList: {
+        '& li': {
+            marginTop: {
+                marginTop: '5px'
+            }
+        }
+    },
+    towerSubItem: {
+        color: 'rgb(255,255 ,255,  0.56)',
+        lineHeight: '1.85',
+        letterSpacing: '0.5px',
+        fontSize: '13px'
     }
 }));
 const TowerSideBar = (props: Props) => {
     const classes = useStyles();
     const towerName = ['Tower name 1', 'Tower name 2', 'Tower name 3', 'Tower name 4', 'Tower name 5', 'Tower name 6', 'Tower name 7', 'Tower name 8'];
     const [countIndex, setCountIndex] = useState(0);
-    console.log(countIndex, 'countIndexcountIndexcountIndexcountIndex')
+    const [TowerSubCountIndex, setTowerSubCountIndex] = useState(0);
     return (
         <div className={classes.sideBar}>
             <div className={classes.titleWrap}>
@@ -132,36 +146,48 @@ const TowerSideBar = (props: Props) => {
                         towerName.map((items, index) => {
                             return (
                                 <li key={index}>
-                                    <div className={classes.subTitle} onClick={({ index }: any) => setCountIndex(index)}>
+                                    <div className={`${classes.subTitle} ${countIndex === index ? 'active' : ''}`} onClick={() => setCountIndex(index)}>
                                         <TowerSvg />   {items}
                                     </div>
                                     {
-                                        countIndex === 0 ?
+                                        countIndex === index ?
                                             <ul className={classes.subList}>
                                                 <li>
-                                                    <p className="subItem">
+                                                    <Link className="subItem" to="#">
                                                         Location Properties
-                                    </p>
+                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <p className="subItem">
+                                                    <Link className="subItem" to="#">
                                                         Logger
-                                    </p>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <p className="subItem">
+                                                    <Link className="subItem" to="#">
                                                         Measurements
-                                    </p>
+                                                    </Link>
+                                                    <ul className={classes.towerSubList}>
+                                                        <li>
+                                                            <p className={classes.towerSubItem}>
+                                                                Wind Speed @ 60m , E
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className={classes.towerSubItem}>
+                                                                Wind Speed @ 60m , W
+                                                            </p>
+                                                        </li>
+                                                    </ul>
                                                 </li>
                                                 <li>
-                                                    <p className="subItem">
+                                                    <Link className="subItem" to="#">
                                                         Maintenance
-                                    </p>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <p className="subItem">
+                                                    <Link className="subItem" to="#">
                                                         Calibration
-                                    </p>
+                                                    </Link>
                                                 </li>
                                             </ul> : ''
 
