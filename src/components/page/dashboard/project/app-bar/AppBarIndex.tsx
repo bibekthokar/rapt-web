@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Grid, IconButton, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import IndexSideBar from '../sidebar';
-import ProjectMap from './projectBody/ProjectMap';
 
 interface Props { }
 const useStyles = makeStyles((theme) => ({
@@ -25,9 +23,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '14px',
         letterSpacing: '0.3px'
     },
-    dashboardWrap: {
 
-    },
     header: {
         background: '#0e1625',
         boxShadow: 'none'
@@ -64,40 +60,36 @@ const useStyles = makeStyles((theme) => ({
 
     }
 }));
-const Index = (props: Props) => {
+const AppBarIndex = (props: Props) => {
     const classes = useStyles();
     return (
-        <section className={classes.dashboardWrap}>
-            <AppBar position="fixed" className={classes.header}>
-                <Toolbar className={classes.headerWrap}>
-                    <div className={classes.logoWrap}>
-                        <Link to="/">
-                            <picture className={classes.logo} >
-                                <img src="/asset/img/logo-white.svg" alt="logo-white" />
-                            </picture>
-                        </Link>
-                        <Typography variant="h6" className={classes.title}>
-                            Resource Data Platform
+        <AppBar position="fixed" className={classes.header}>
+            <Toolbar className={classes.headerWrap}>
+                <div className={classes.logoWrap}>
+                    <Link to="/">
+                        <picture className={classes.logo} >
+                            <img src="/asset/img/logo-white.svg" alt="logo-white" />
+                        </picture>
+                    </Link>
+                    <Typography variant="h6" className={classes.title}>
+                        Resource Data Platform
                     </Typography>
-                        <Link to="/">
-                            <picture className={classes.tower} >
-                                <img src="/asset/img/tower.svg" alt="tower" />
-                            </picture>
+                    <Link to="/">
+                        <picture className={classes.tower} >
+                            <img src="/asset/img/tower.svg" alt="tower" />
+                        </picture>
+                    </Link>
+                </div>
+                <div className={classes.userName}>
+                    <Link to="#">
+                        A
                         </Link>
-                    </div>
-                    <div className={classes.userName}>
-                        <Link to="#">
-                            A
-                        </Link>
-                    </div>
-                </Toolbar>
-            </AppBar>
-            <div className={classes.bodyWrap}>
-                <IndexSideBar />
-                <ProjectMap />
-            </div>
-        </section>
+                </div>
+            </Toolbar>
+        </AppBar>
+
+
     )
 };
 
-export default Index;
+export default AppBarIndex;

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { withTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import { Avatar, Grid, Link, Typography } from '@material-ui/core';
 import InputField from '../../bits/core/field/InputField';
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import ButtonField from '../../bits/core/button/ButtonField';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import ButtonField from '../../bits/core/button/ButtonField';
 interface Props { }
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
     logo: {
         display: 'block',
+        cursor: 'pointer'
     },
     image: {
         height: '100%',
