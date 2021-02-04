@@ -4,9 +4,6 @@ import Login from './Login';
 
 const Dashboard = lazy(() => import('./Dashboard'));
 
-// import LoginIndex from '../components/page/login';
-// import ProjectDashboard from '../components/page/dashboard/project';
-// import TowerIndex from '../components/page/dashboard/project/tower/TowerIndex';
 function App() {
   const [isLogin, setIsLogin] = useState(false);
 
@@ -24,9 +21,6 @@ function App() {
             render={() => <Login toggleLogin={setIsLogin} />}
           />
         )}
-        {/* <Route exact path="/project" component={ProjectDashboard} />
-        <Route exact path="/login" component={LoginIndex} />
-        <Route exact path="/project/tower" component={TowerIndex} /> */}
       </div>
     </Router>
   );
