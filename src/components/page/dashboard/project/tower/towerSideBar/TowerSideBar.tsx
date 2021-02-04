@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     sideBar: {
         width: '25rem',
         height: '100vh',
-        padding: '25px 20px 29px',
+        padding: '25px 0 29px',
         paddingTop: '73px',
         backgroundColor: '#111b30'
     },
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Roboto',
         lineHeight: '1.5',
         color: '#fff',
+        padding: '0 20px',
         fontWeight: theme.spacing(60),
         alignItems: 'baseline'
     },
@@ -43,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'capitalize',
         color: '#ffff',
         fontWeight: 'normal',
+        padding: '0 20px',
         display: 'flex',
         alignItems: 'center',
         transition: 'all .3s ease-in',
@@ -61,9 +63,13 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'normal',
         display: 'flex',
         alignItems: 'center',
+        cursor: 'pointer',
+        padding: '7px 20px',
         transition: 'all .3s ease-in',
         '&:hover , &.active': {
-            color: '#fff'
+            color: '#fff',
+            backgroundColor: 'rgb(255,255 ,255,  .04)',
+            borderLeft: '4px solid #00c48c'
         },
         '& svg': {
             marginRight: '1rem'
@@ -87,11 +93,31 @@ const useStyles = makeStyles((theme) => ({
     },
     projectTitle: {
 
+    },
+    subList: {
+        display: 'block',
+        paddingLeft: '4.5rem',
+        '& li': {
+            marginTop: '8px',
+            lineHeight: '1.71',
+            cursor: 'pointer',
+            '& .subItem': {
+                color: 'rgb(255,255 ,255,  .7)',
+                fontSize: '14px',
+                letterSpacing: '0.2px',
+                '&:hover': {
+                    color: theme.palette.secondary.main,
+                }
+            }
+        }
+
     }
 }));
 const TowerSideBar = (props: Props) => {
     const classes = useStyles();
-    const towerName = ['Tower name 1', 'Tower name 2', 'Tower name 3', 'Tower name 4', 'Tower name 5', 'Tower name 6', 'Tower name 7', 'Tower name 8']
+    const towerName = ['Tower name 1', 'Tower name 2', 'Tower name 3', 'Tower name 4', 'Tower name 5', 'Tower name 6', 'Tower name 7', 'Tower name 8'];
+    const [countIndex, setCountIndex] = useState(0);
+    console.log(countIndex, 'countIndexcountIndexcountIndexcountIndex')
     return (
         <div className={classes.sideBar}>
             <div className={classes.titleWrap}>
@@ -106,9 +132,40 @@ const TowerSideBar = (props: Props) => {
                         towerName.map((items, index) => {
                             return (
                                 <li key={index}>
-                                    <Link className={classes.subTitle} to="#">
+                                    <div className={classes.subTitle} onClick={({ index }: any) => setCountIndex(index)}>
                                         <TowerSvg />   {items}
-                                    </Link>
+                                    </div>
+                                    {
+                                        countIndex === 0 ?
+                                            <ul className={classes.subList}>
+                                                <li>
+                                                    <p className="subItem">
+                                                        Location Properties
+                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className="subItem">
+                                                        Logger
+                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className="subItem">
+                                                        Measurements
+                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className="subItem">
+                                                        Maintenance
+                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className="subItem">
+                                                        Calibration
+                                    </p>
+                                                </li>
+                                            </ul> : ''
+
+                                    }
 
                                 </li>
                             )
