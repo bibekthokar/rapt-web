@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     },
     sideBar: {
         width: '25rem',
-        height: '100vh',
         padding: '25px 0 29px',
         paddingTop: '73px',
         backgroundColor: '#111b30'
@@ -106,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
                 color: 'rgb(255,255 ,255,  .7)',
                 fontSize: '14px',
                 letterSpacing: '0.2px',
-                '&:hover': {
+                '&:hover,&.active': {
                     color: theme.palette.secondary.main,
                 }
             }
@@ -130,8 +129,12 @@ const useStyles = makeStyles((theme) => ({
 const TowerSideBar = (props: Props) => {
     const classes = useStyles();
     const towerName = ['Tower name 1', 'Tower name 2', 'Tower name 3', 'Tower name 4', 'Tower name 5', 'Tower name 6', 'Tower name 7', 'Tower name 8'];
+
     const [countIndex, setCountIndex] = useState(0);
-    const [TowerSubCountIndex, setTowerSubCountIndex] = useState(0);
+    const [TowerSubShow, setTowerSubShow] = useState(false);
+    const handleChange = () => {
+        setTowerSubShow(!TowerSubShow);
+    };
     return (
         <div className={classes.sideBar}>
             <div className={classes.titleWrap}>
@@ -163,21 +166,24 @@ const TowerSideBar = (props: Props) => {
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link className="subItem" to="#">
+                                                    <Link className={`subItem ${TowerSubShow ? 'active' : ''}`} to="#" onClick={handleChange}>
                                                         Measurements
                                                     </Link>
-                                                    <ul className={classes.towerSubList}>
-                                                        <li>
-                                                            <p className={classes.towerSubItem}>
-                                                                Wind Speed @ 60m , E
+                                                    {
+                                                        TowerSubShow ? <ul className={classes.towerSubList}>
+                                                            <li>
+                                                                <p className={classes.towerSubItem}>
+                                                                    Wind Speed @ 60m , E
                                                             </p>
-                                                        </li>
-                                                        <li>
-                                                            <p className={classes.towerSubItem}>
-                                                                Wind Speed @ 60m , W
+                                                            </li>
+                                                            <li>
+                                                                <p className={classes.towerSubItem}>
+                                                                    Wind Speed @ 60m , W
                                                             </p>
-                                                        </li>
-                                                    </ul>
+                                                            </li>
+                                                        </ul> : ''
+                                                    }
+
                                                 </li>
                                                 <li>
                                                     <Link className="subItem" to="#">
