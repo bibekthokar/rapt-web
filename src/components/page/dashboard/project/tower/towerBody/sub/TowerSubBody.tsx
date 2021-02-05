@@ -9,6 +9,8 @@ import SwapHorizOutlinedIcon from '@material-ui/icons/SwapHorizOutlined';
 import { Link } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import TextField from '@material-ui/core/TextField';
+import DeleteIcon from '@material-ui/icons/Delete';
+import pdfIcon from '../../../../../../bits/icons/pdfIcon';
 interface Props { }
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -59,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         background: '#fff',
         transition: 'all .3s ease-in',
         '&.active': {
-            width: '695px',
+            width: '720px',
             position: 'absolute',
             right: '0',
             height: '100%',
@@ -288,6 +290,11 @@ const useStyles = makeStyles((theme) => ({
             lineHeight: '1.08',
             cursor: 'pointer',
             color: theme.palette.primary.main,
+            '&.delete': {
+                '& svg': {
+                    fill: theme.palette.primary.main,
+                }
+            },
             '& svg': {
                 fill: theme.palette.secondary.main,
             }
@@ -303,6 +310,7 @@ const useStyles = makeStyles((theme) => ({
         '& table ': {
             borderCollapse: 'collapse',
             width: '100%',
+
             '& th': {
                 padding: '10px 5px',
                 textAlign: 'left',
@@ -314,10 +322,23 @@ const useStyles = makeStyles((theme) => ({
             '& td': {
                 padding: '5px',
                 '& .control-form': {
-                    width: '100%'
-                }
+                    width: '100%',
+                    '&.date': {
+                        width: '100px'
+                    }
+                },
+
             }
-        }
+        },
+        '& .calibration': {
+            '& td': {
+                '& .control-form': {
+                    height: '34px',
+                    lineHeight: '34px'
+                },
+
+            }
+        },
     },
     towerBodySensorForm: {
         marginTop: '8px',
@@ -328,7 +349,28 @@ const useStyles = makeStyles((theme) => ({
             padding: '9px 8px',
             borderRadius: '2px',
             color: 'rgba(0 , 0 , 0 , .7)',
-            border: 'solid 1px rgba(30 , 36 , 71 , .15)'
+            border: 'solid 1px rgba(30 , 36 , 71 , .15)',
+
+        },
+
+    },
+    pdf: {
+        display: 'flex',
+        alignItems: 'center',
+        cursor: 'pointer',
+        padding: '3px 4px',
+        width: '150px',
+        fontSize: '11px',
+        borderRadius: '2px',
+        marginTop: '4px',
+        color: 'rgba(0 , 0 , 0 , .8)',
+        border: ' solid 1px rgba(30, 36, 71, 0.15)',
+        '& img': {
+            width: '27px',
+            marginRight: '5px'
+        },
+        '& input': {
+            display: 'none'
         }
     }
 }));
@@ -630,7 +672,7 @@ const TowerSubBody = (props: Props) => {
                     <div className={classes.towerBodySensor}>
                         <div className={classes.towerBodySensorHead}>
                             <h3>Mounting Arrangement</h3>
-                            <p><AddIcon /> {show ? ' Sensor Configuration' : ''}</p>
+                            <p><AddIcon /> {show ? ' New arrangement' : ''}</p>
                         </div>
 
                         <div className={classes.towerBodySensorTable}>
@@ -638,30 +680,40 @@ const TowerSubBody = (props: Props) => {
                                 <table>
                                     < tr >
                                         <th>Display Name</th>
-                                        <th>Slope</th>
-                                        <th>Offset</th>
-                                        <th>Units</th>
-                                        <th>Logger height</th>
-                                        <th>Channel</th>
+                                        <th>Type</th>
+                                        <th>Boom Orientation</th>
+                                        <th>Boom OEM</th>
+                                        <th>Boom Model</th>
                                         <th>Date from</th>
+                                        <th>Date To</th>
                                     </tr>
                                     <tr>
-                                        <td><input className="control-form" value="Config name 2" /></td>
+                                        <td><input className="control-form" value="A3 | 60 Deg - N" /></td>
+                                        <td><select name="type" id="type" className="control-form">
+                                            <option value="type">type</option>
+                                            <option value="saab">Saab</option>
+                                            <option value="mercedes">Mercedes</option>
+                                            <option value="audi">Audi</option>
+                                        </select></td>
                                         <td><input className="control-form" value="value" /></td>
                                         <td><input className="control-form" value="value" /></td>
                                         <td><input className="control-form" value="value" /></td>
-                                        <td><input className="control-form" value="value" /></td>
-                                        <td><input className="control-form" value="value" /></td>
-                                        <td><input type='date' className="control-form" value="value" /></td>
+                                        <td><input type='date' className="control-form date" value="value" /></td>
+                                        <td><input type='date' className="control-form date" value="value" /></td>
                                     </tr>
                                     <tr>
-                                        <td><input className="control-form" value="Config name 2" /></td>
+                                        <td><input className="control-form" value="A3 | 60 Deg - N" /></td>
+                                        <td><select name="type" id="type" className="control-form">
+                                            <option value="type">type</option>
+                                            <option value="saab">Saab</option>
+                                            <option value="mercedes">Mercedes</option>
+                                            <option value="audi">Audi</option>
+                                        </select></td>
                                         <td><input className="control-form" value="value" /></td>
                                         <td><input className="control-form" value="value" /></td>
                                         <td><input className="control-form" value="value" /></td>
-                                        <td><input className="control-form" value="value" /></td>
-                                        <td><input className="control-form" value="value" /></td>
-                                        <td><input type='date' className="control-form" value="value" /></td>
+                                        <td><input type='date' className="control-form date" value="value" /></td>
+                                        <td><input type='date' className="control-form date" value="value" /></td>
                                     </tr>
                                 </table>
                                 :
@@ -674,8 +726,66 @@ const TowerSubBody = (props: Props) => {
 
                         </div>
                     </div>
+                    <div className={classes.towerBodySensor}>
+                        <div className={classes.towerBodySensorHead}>
+                            <h3>Calibration</h3>
+                            <p><AddIcon /> {show ? 'New Calibration' : ''}</p>
+                        </div>
+
+                        <div className={classes.towerBodySensorTable}>
+                            {show ?
+                                <table className="calibration" >
+                                    < tr >
+                                        <th>Display Name</th>
+                                        <th>Slope</th>
+                                        <th>Offset</th>
+                                        <th>Date</th>
+                                        <th>Documentation</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input className="control-form" value="Sensor Calibration 2" /></td>
+                                        <td><input className="control-form" value="value" /></td>
+                                        <td><input className="control-form" value="value" /></td>
+                                        <td><input type='date' className="control-form " value="value" /></td>
+                                        <td>
+                                            <label className={classes.pdf}>
+                                                <input type="file" />
+                                                <img src="/asset/img/pdf.svg" alt="pdf" />
+                                                CalibrationFile_2.pdf
+                                            </label>
+                                        </td>
+                                        <td><DeleteIcon /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input className="control-form" value="Sensor Calibration 1" /></td>
+                                        <td><input className="control-form" value="value" /></td>
+                                        <td><input className="control-form" value="value" /></td>
+                                        <td><input type='date' className="control-form " value="value" /></td>
+                                        <td><label className={classes.pdf}>
+                                            <input type="file" />
+                                            <img src="/asset/img/pdf.svg" alt="pdf" />
+                                            CalibrationFile_1.pdf
+                                            </label></td>
+                                        <td><DeleteIcon /></td>
+                                    </tr>
+                                </table>
+                                :
+                                <div className={classes.towerBodySensorForm}>
+                                    <input type="text" className="control-form_border" value=" Sensor Calibration 1  " />
+                                    <input type="text" className="control-form_border" value=" Sensor Calibration 2" />
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                    <div className={classes.towerBodySensor}>
+                        <div className={classes.towerBodySensorHead}>
+                            <p className="delete"><DeleteIcon /> Delete Sensor</p>
+                        </div>
+                    </div>
                 </div>
-            </div >
+            </div>
         </div >
     )
 };
