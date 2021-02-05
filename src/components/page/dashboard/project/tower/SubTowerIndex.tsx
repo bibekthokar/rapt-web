@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import AppBarIndex from '../app-bar/AppBarIndex';
-import TowerBodyIndex from './towerBody/main/TowerBodyIndex';
 import TowerSideBar from './towerSideBar/TowerSideBar';
+import TowerSubBody from './towerBody/sub/TowerSubBody';
 
 interface Props { }
 const useStyles = makeStyles((theme) => ({
@@ -20,17 +20,17 @@ const useStyles = makeStyles((theme) => ({
 
     }
 }));
-const TowerIndex = (props: Props) => {
+const SubTowerIndex = (props: Props) => {
     const classes = useStyles();
     return (
         <section className={classes.dashboardWrap}>
             <AppBarIndex />
             <div className={classes.bodyWrap}>
                 <TowerSideBar />
-                <TowerBodyIndex />
+                <TowerSubBody />
             </div>
         </section>
     )
 };
 
-export default TowerIndex;
+export default SubTowerIndex;

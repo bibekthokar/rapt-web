@@ -32,8 +32,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 interface InputProps {
     nameValue?: string,
+    inactive?: string,
+    active?: string
 }
-const ToggleBtn = ({ nameValue }: any) => {
+const ToggleBtn = ({ nameValue, inactive, active }: any) => {
     const classes = useStyles();
     const [show, setShow] = useState(false);
     const handleChange = () => {
@@ -42,11 +44,11 @@ const ToggleBtn = ({ nameValue }: any) => {
     return (
         <div className={classes.viewToggle}>
             <button className={show ? 'active' : ''} onClick={handleChange}>
-                Overview
-        </button>
+                {inactive}
+            </button>
             <button className={show ? '' : 'active'} onClick={handleChange}>
-                Map View
-        </button>
+                {active}
+            </button>
         </div>
     )
 };

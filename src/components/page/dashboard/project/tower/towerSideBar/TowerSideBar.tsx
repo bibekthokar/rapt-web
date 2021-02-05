@@ -120,16 +120,25 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     towerSubItem: {
-        color: 'rgb(255,255 ,255,  0.56)',
+        color: '#fff',
+        opacity: '0.56',
         lineHeight: '1.85',
         letterSpacing: '0.5px',
-        fontSize: '13px'
+        fontSize: '13px',
+        display: 'flex',
+        alignItems: 'center',
+        '& svg': {
+            marginRight: '7px'
+        },
+        '&:hover': {
+            opacity: '1',
+        }
     }
 }));
 const TowerSideBar = (props: Props) => {
     const classes = useStyles();
     const towerName = ['Tower name 1', 'Tower name 2', 'Tower name 3', 'Tower name 4', 'Tower name 5', 'Tower name 6', 'Tower name 7', 'Tower name 8'];
-
+    const towerSubItem = [' Wind Speed @ 60m , E', 'Wind Speed @ 60m , W', 'Wind Speed @ 50m , E', 'Wind Speed @ 50m , W', 'Wind Speed @ 30m , E', 'Wind Speed @ 30m , W', 'Wind Dir @ 50m, W', 'Wind Dir @ 30m, E', 'Wind Dir @ 30m, W', 'Temperature @ 60m', 'Temperature @ 30m', 'Pressure @ Ground']
     const [countIndex, setCountIndex] = useState(0);
     const [TowerSubShow, setTowerSubShow] = useState(false);
     const handleChange = () => {
@@ -166,24 +175,26 @@ const TowerSideBar = (props: Props) => {
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link className={`subItem ${TowerSubShow ? 'active' : ''}`} to="#" onClick={handleChange}>
+                                                    <Link className={`subItem ${TowerSubShow ? 'active' : ''}`} to="/project/tower/measurements" onClick={handleChange}>
                                                         Measurements
                                                     </Link>
                                                     {
-                                                        TowerSubShow ? <ul className={classes.towerSubList}>
-                                                            <li>
-                                                                <p className={classes.towerSubItem}>
-                                                                    Wind Speed @ 60m , E
-                                                            </p>
-                                                            </li>
-                                                            <li>
-                                                                <p className={classes.towerSubItem}>
-                                                                    Wind Speed @ 60m , W
-                                                            </p>
-                                                            </li>
-                                                        </ul> : ''
-                                                    }
+                                                        TowerSubShow ?
+                                                            <ul className={classes.towerSubList}>
 
+                                                                {
+                                                                    towerSubItem.map((i, j) => {
+                                                                        return (
+                                                                            <li key={j}>
+                                                                                <p className={classes.towerSubItem}>
+                                                                                    <TowerSvg />    {i}
+                                                                                </p>
+                                                                            </li>
+                                                                        )
+                                                                    })
+                                                                }
+                                                            </ul> : ''
+                                                    }
                                                 </li>
                                                 <li>
                                                     <Link className="subItem" to="#">
