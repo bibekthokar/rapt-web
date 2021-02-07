@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <g fill="none" fill-rule="evenodd" opacity=".8">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <path fill-rule="nonzero" stroke="#FFF" stroke-width=".5" d="M8.413.679C8.418.335 8.316.04 8.179 0h-.607c-.136.044-.234.3-.234.679 0 .379-.278 11.938-.415 17.856 0 .391.164.696.387.696h1.148c.224 0 .398-.305.388-.696C8.695 12.583 8.55 6.63 8.413.679z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385)"/>
+                                    <g>
+                                        <g>
+                                            <path stroke="#FFF" stroke-linecap="round" stroke-width=".6" d="M1.538 3.462L13.846 3.462" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(0 6.923)"/>
+                                            <g fill="#FFF">
+                                                <path d="M2.179 0.769L2.179 1.923 2.436 1.923 2.436 2.692 1.41 2.692 1.41 1.923 1.667 1.923 1.667 0.769z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(0 6.923) translate(0 .154)"/>
+                                                <path d="M3.333 0c.284 0 .513.23.513.513 0 .283-.23.513-.513.513-.19 0-.355-.103-.444-.256H.957c-.089.153-.254.256-.444.256C.23 1.026 0 .796 0 .513 0 .23.23 0 .513 0c.19 0 .355.103.444.256h1.932C2.978.103 3.144 0 3.333 0z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(0 6.923) translate(0 .154)"/>
+                                            </g>
+                                            <g fill="#FFF">
+                                                <path d="M2.179 0.769L2.179 1.923 2.436 1.923 2.436 2.692 1.41 2.692 1.41 1.923 1.667 1.923 1.667 0.769z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(0 6.923) translate(11.538 .154)"/>
+                                                <path d="M3.333 0c.284 0 .513.23.513.513 0 .283-.23.513-.513.513-.19 0-.355-.103-.444-.256H.957c-.089.153-.254.256-.444.256C.23 1.026 0 .796 0 .513 0 .23.23 0 .513 0c.19 0 .355.103.444.256h1.932C2.978.103 3.144 0 3.333 0z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(0 6.923) translate(11.538 .154)"/>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <path stroke="#FFF" stroke-linecap="round" stroke-width=".6" d="M1.538 3.462L12.308 3.462" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(.77)"/>
+                                            <g fill="#FFF">
+                                                <path d="M2.179 0.769L2.179 1.923 2.436 1.923 2.436 2.692 1.41 2.692 1.41 1.923 1.667 1.923 1.667 0.769z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(.77) translate(0 .154)"/>
+                                                <path d="M3.333 0c.284 0 .513.23.513.513 0 .283-.23.513-.513.513-.19 0-.355-.103-.444-.256H.957c-.089.153-.254.256-.444.256C.23 1.026 0 .796 0 .513 0 .23.23 0 .513 0c.19 0 .355.103.444.256h1.932C2.978.103 3.144 0 3.333 0z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(.77) translate(0 .154)"/>
+                                            </g>
+                                            <g fill="#FFF">
+                                                <path d="M2.179 0.769L2.179 1.923 2.436 1.923 2.436 2.692 1.41 2.692 1.41 1.923 1.667 1.923 1.667 0.769z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(.77) translate(10 .154)"/>
+                                                <path d="M3.333 0c.284 0 .513.23.513.513 0 .283-.23.513-.513.513-.19 0-.355-.103-.444-.256H.957c-.089.153-.254.256-.444.256C.23 1.026 0 .796 0 .513 0 .23.23 0 .513 0c.19 0 .355.103.444.256h1.932C2.978.103 3.144 0 3.333 0z" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385) translate(0 1.538) translate(.77) translate(10 .154)"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                                <path stroke="#FFF" stroke-width=".2" d="M8.748 13.251L6.923 16.199M8.598 7.185L7.194 10.154M8.748 19.001L6.923 16.199M8.748 13.251L7.194 10.154M8.598 7.185L7.395 3.637 8.413.679" transform="translate(-26 -139) translate(0 48) translate(0 84) translate(25 7) translate(1) translate(2.308 .385)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

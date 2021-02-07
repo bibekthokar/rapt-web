@@ -104,13 +104,15 @@ const Login = ({ toggleLogin }: LoginProps) => {
   const onSubmit = (value: LoginForm) => {
     setLoading(true);
     setTimeout(() => {
-      if (value.email === 'admin@gmail.com' && value.password === '12345678') {
-        toggleLogin(true);
-        setLoading(false);
-      } else {
-        setServerError('Bad Email or password');
-        setLoading(false);
-      }
+      toggleLogin(true);
+      setLoading(false);
+      // if (value.email === 'admin@gmail.com' && value.password === '12345678') {
+      //   toggleLogin(true);
+      //   setLoading(false);
+      // } else {
+      //   setServerError('Bad Email or password');
+      //   setLoading(false);
+      // }
     }, 1000);
   };
   return (

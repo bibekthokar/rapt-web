@@ -5,12 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Remove default padding */
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
 /* Remove default margin */
 body,
 h1,
@@ -26,6 +20,7 @@ figcaption,
 blockquote,
 dl,
 dd {
+  padding: 0;
   margin: 0;
 }
 
@@ -41,23 +36,25 @@ body {
   line-height: 1.5;
   font-family: 'Roboto', sans-serif;
 }
-img{
-  display:block;
-  width:100%;
+img {
+  display: block;
+  width: 100%;
 }
-fieldset,input{
-  border:none;
-  padding:0;
-  margin:0;
-  outline:none;
+fieldset,
+input {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
-button:focus{
-  border:none;
-  outline:none;
+button:focus {
+  border: none;
+  outline: none;
 }
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
+  padding: 0;
   list-style: none;
 }
 
@@ -67,10 +64,10 @@ a:not([class]) {
 }
 
 /* Make images easier to work with */
-img {
+/* img {
   max-width: 100%;
   display: block;
-}
+} */
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {

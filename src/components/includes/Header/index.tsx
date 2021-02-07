@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { MastWhiteIcon } from 'src/components/icons';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -76,7 +77,7 @@ const Header = () => {
           </Typography>
           <Link to="/">
             <picture className={classes.tower}>
-              <img src="/asset/img/tower.svg" alt="tower" />
+              <MastWhiteIcon />
             </picture>
           </Link>
         </div>

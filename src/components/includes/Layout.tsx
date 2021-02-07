@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import React, { ReactNode, ReactNodeArray } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import TowerSideBar from './Sidebar/TowerSidebar';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -65,16 +66,17 @@ const useStyles = makeStyles(() => ({
 
 interface Props {
   children: ReactNode | ReactNodeArray;
+  showTower?: boolean;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, showTower = false }: Props) => {
   const classes = useStyles();
 
   return (
     <section className={classes.dashboardWrap}>
       <Header />
       <div className={classes.bodyWrap}>
-        <Sidebar />
+        {showTower ? <TowerSideBar /> : <Sidebar />}
         <main className={classes.main}>{children}</main>
       </div>
     </section>

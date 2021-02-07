@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         {isLogin ? (
           <Suspense fallback={null}>
-            <Route exact path="/" component={Dashboard} />
+            <Route path="/" component={Dashboard} />
           </Suspense>
         ) : (
           <Route

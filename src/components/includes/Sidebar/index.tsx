@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import FolderOpenIcon from '@material-ui/icons/FolderOpen';
+import { ProjectDarkIcon } from 'src/components/icons';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'baseline',
   },
   mainTitle: {
-    fontSize: '15px',
+    fontSize: '1.5rem',
     textTransform: 'capitalize',
-    color: 'rgb(255,255 ,255,  .8)',
+    color: 'rgb(255,255 ,255,  .56)',
     fontWeight: 'normal',
     display: 'flex',
     alignItems: 'center',
@@ -60,14 +60,14 @@ const useStyles = makeStyles((theme) => ({
 const SideBar = () => {
   const classes = useStyles();
   const projectName = [
-    'Project name 1',
-    'Project name 2',
-    'Project name 3',
-    'Project name 4',
-    'Project name 5',
-    'Project name 6',
-    'Project name 7',
-    'Project name 8',
+    { name: 'Project name 1', id: 'p1' },
+    { name: 'Project name 2', id: 'p2' },
+    { name: 'Project name 3', id: 'p3' },
+    { name: 'Project name 4', id: 'p4' },
+    { name: 'Project name 5', id: 'p5' },
+    { name: 'Project name 6', id: 'p6' },
+    { name: 'Project name 7', id: 'p7' },
+    { name: 'Project name 8', id: 'p8' },
   ];
   return (
     <div className={classes.sideBar}>
@@ -76,11 +76,15 @@ const SideBar = () => {
         <span className={classes.count}>(8)</span>
       </div>
       <ul className={classes.sideHead}>
-        {projectName.map((items, index) => {
+        {projectName.map((project, index) => {
           return (
-            <li key={index}>
-              <Link className={classes.mainTitle} to="#">
-                <FolderOpenIcon /> {items}
+            <li key={project.id}>
+              <Link
+                className={classes.mainTitle}
+                to={`/${project.name.toLowerCase().replace(/ /g, '-')}`}
+              >
+                <ProjectDarkIcon />
+                {project.name}
               </Link>
             </li>
           );
