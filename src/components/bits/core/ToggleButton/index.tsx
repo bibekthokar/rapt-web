@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
@@ -14,30 +14,32 @@ const useStyles = makeStyles((theme) => ({
       background: 'none',
       fontSize: '12px',
       width: '91px',
-      lineHeight: '28px',
+      lineHeight: '1.33',
       height: '28px',
       cursor: 'pointer',
       letterSpacing: '0.1px',
       textAlign: 'center',
-      color: 'rgb(30 , 36 , 71 , .5)',
+      color: theme.palette.primary.main,
+      fontWeight: 'normal',
+      fontStretch: 'normal',
+      fontStyle: 'normal',
+      opacity: '.5',
       '&.active': {
-        color: 'rgb(255 , 255 , 255 , .9)',
+        color: 'var(--white)',
+        opacity: '.9',
         letterSpacing: '0.2px',
-        background: '#00c48c',
+        background: theme.palette.secondary.main,
         borderRadius: '14px',
         boxShadow: '-3px 0 7px 3px rgba(0, 0, 0, 0.06)',
+        lineHeight: 'normal',
       },
     },
   },
 }));
-interface InputProps {
-  nameValue?: string;
-  inactive?: string;
-  active?: string;
-}
-const ToggleButton = ({ nameValue, inactive, active }: any) => {
+
+const ToggleButton = ({ inactive, active }: any) => {
   const classes = useStyles();
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const handleChange = () => {
     setShow(!show);
   };

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Avatar, Button, Grid, Link, Typography } from '@material-ui/core';
-import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import { Button, Grid, Hidden, Link, Typography } from '@material-ui/core';
 import InputField from 'src/components/bits/core/field/InputField';
 import { useForm } from 'react-hook-form';
 import Spinner from 'src/components/bits/core/Spinner';
+import {
+  EmailLoginIcon,
+  LoginLockIcon,
+  PasswordVisibleIcon,
+  PasswordInvisibleIcon,
+} from 'src/components/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,30 +36,33 @@ const useStyles = makeStyles((theme) => ({
   form: {
     flexGrow: 1,
     // maxWidth: '40rem',
-    paddingLeft: '5rem',
-    paddingRight: '10rem',
+    paddingLeft: '6rem',
+    paddingRight: '11rem',
     // padding: '0 4rem',
     '& h2': {
       fontSize: '3rem',
       fontWeight: 'bold',
       color: theme.palette.primary.main,
-      [theme.breakpoints.down('md')]: {
-        fontSize: '2.5rem',
-      },
     },
     '& p': {
       marginTop: '1.2rem',
       fontSize: '14px',
-      letterSpacing: '.3px',
+      letterSpacing: 'normal',
+      fontWeight: 'normal',
+      fontStretch: 'normal',
+      opacity: '.7',
       color: theme.palette.primary.main,
-      [theme.breakpoints.down('md')]: {
-        letterSpacing: '0.3px',
-      },
     },
   },
   logo: {
     display: 'block',
     cursor: 'pointer',
+    width: '5rem',
+    height: '5rem',
+    '& img': {
+      width: '100%',
+      height: '100%',
+    },
   },
   image: {
     height: '100vh',
@@ -70,6 +75,14 @@ const useStyles = makeStyles((theme) => ({
   },
   field: {
     marginTop: '3.7rem',
+
+    '& label': {
+      fontSize: '1.3rem',
+      fontWeight: '500',
+      letterSpacing: '0.2px',
+      color: theme.palette.primary.main,
+      opacity: '.5',
+    },
   },
   button: {
     marginTop: '3rem',
@@ -77,7 +90,13 @@ const useStyles = makeStyles((theme) => ({
   copyright: {
     fontSize: '11px',
     fontFamily: 'Roboto',
-    color: 'rgb(30 , 36 , 71 , .5)',
+    color: theme.palette.primary.main,
+    opacity: 0.5,
+    fontWeight: 'normal',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: 'normal',
   },
   loginWrap: {
     display: 'flex',
@@ -98,7 +117,7 @@ interface LoginForm {
 const Login = ({ toggleLogin }: LoginProps) => {
   const classes = useStyles();
   const { register, errors, handleSubmit } = useForm();
-  const [serverError, setServerError] = useState('');
+  // const [serverError, setServerError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const onSubmit = (value: LoginForm) => {
@@ -118,10 +137,10 @@ const Login = ({ toggleLogin }: LoginProps) => {
   return (
     <section className={classes.root}>
       <Grid container spacing={0}>
-        <Grid item xs={12} md={6} lg={5} className={classes.loginForm}>
+        <Grid item xs={12} sm={12} md={6} lg={5} className={classes.loginForm}>
           <div className={classes.loginWrap}>
             <Link className={classes.logo}>
-              <Avatar alt="Remy Sharp" src="/asset/img/logo.svg" />
+              <img src="/asset/img/logo.svg" alt="logo" />
             </Link>
             <div className={classes.formRoot}>
               <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
@@ -132,7 +151,7 @@ const Login = ({ toggleLogin }: LoginProps) => {
                     name="email"
                     fieldName="Email"
                     type="text"
-                    icon={<EmailOutlinedIcon />}
+                    icon={<EmailLoginIcon />}
                     inputRef={register({ required: 'required' })}
                     placeholder="Your email address here"
                     error={errors?.email?.message}
@@ -142,13 +161,13 @@ const Login = ({ toggleLogin }: LoginProps) => {
                     name="password"
                     fieldName="Password"
                     type="password"
-                    icon={<LockOutlinedIcon />}
-                    visibleEye={<VisibilityIcon />}
-                    hideEye={<VisibilityOffIcon />}
+                    icon={<LoginLockIcon />}
+                    visibleEye={<PasswordVisibleIcon />}
+                    hideEye={<PasswordInvisibleIcon />}
                     placeholder="Your password here"
                     // error="Bad Email or password!"
                     inputRef={register({ required: 'required' })}
-                    error={errors?.password?.message || serverError}
+                    error={errors?.password?.message}
                   />
                   <Button
                     color="primary"
@@ -158,6 +177,7 @@ const Login = ({ toggleLogin }: LoginProps) => {
                     type="submit"
                     className={classes.button}
                     disabled={loading}
+                    disableElevation
                   >
                     {loading && <Spinner size={22} />}
                     Login
@@ -171,10 +191,12 @@ const Login = ({ toggleLogin }: LoginProps) => {
           </div>
           <p className={classes.copyright}>Met Monitoring ©2021 </p>
         </Grid>
-        <Grid item xs={undefined} md={6} lg={7}>
-          <div className={classes.image}>
-            <img src="/asset/img/login-cover.jpg" alt="windTower" />
-          </div>
+        <Grid item xs={undefined} sm={undefined} md={6} lg={7}>
+          <Hidden smDown>
+            <div className={classes.image}>
+              <img src="/asset/img/login-cover.jpg" alt="windTower" />
+            </div>
+          </Hidden>
         </Grid>
       </Grid>
     </section>

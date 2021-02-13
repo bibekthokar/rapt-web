@@ -4,7 +4,7 @@ import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { MastWhiteIcon } from 'src/components/icons';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -15,21 +15,30 @@ const useStyles = makeStyles(() => ({
   tower: {
     marginLeft: '5.2rem',
     display: 'block',
-    padding: '1.1rem 2.2rem',
+    padding: '.8rem 2.2rem',
     textAlign: 'center',
     background: 'rgb(255,255 ,255,  .05)',
   },
   title: {
     fontSize: '14px',
     letterSpacing: '0.3px',
+    opacity: '0.9',
+    fontFamily: 'Sanuk-SC',
+    color: 'var(--white)',
+    fontWeight: 500,
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    marginRight: '5.2rem',
   },
   dashboardWrap: {},
   header: {
-    background: '#0e1625',
+    background: theme.palette.primary.dark,
     boxShadow: 'none',
   },
   headerWrap: {
-    minHeight: 'auto',
+    minHeight: '4.8rem',
+    padding: '0 1.5rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -65,7 +74,7 @@ const Header = () => {
 
   return (
     <AppBar position="fixed" className={classes.header}>
-      <Toolbar className={classes.headerWrap}>
+      <Toolbar className={classes.headerWrap} disableGutters>
         <div className={classes.logoWrap}>
           <Link to="/">
             <picture className={classes.logo}>

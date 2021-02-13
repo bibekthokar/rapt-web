@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+    <defs>
+        <filter id="q0edrnyssa" width="318.2%" height="318.2%" x="-109.1%" y="-109.1%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="shadowSpreadOuter1"/>
+            <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="13"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+        </filter>
+        <filter id="2otce2v4ec">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.117647 0 0 0 0 0.141176 0 0 0 0 0.278431 0 0 0 1.000000 0"/>
+        </filter>
+        <circle id="yk19ymy0vb" cx="22" cy="22" r="22"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g transform="translate(-1210 -193) translate(1190 48) translate(20 127) translate(0 18)">
+                            <use fill="#000" filter="url(#q0edrnyssa)" xlink:href="#yk19ymy0vb"/>
+                            <use fill="#FFF" xlink:href="#yk19ymy0vb"/>
+                        </g>
+                        <g opacity=".7">
+                            <g>
+                                <path d="M0 0H25V25H0z" transform="translate(-1210 -193) translate(1190 48) translate(20 127) translate(0 18) translate(10 11)"/>
+                            </g>
+                            <g filter="url(#2otce2v4ec)" transform="translate(-1210 -193) translate(1190 48) translate(20 127) translate(0 18) translate(10 11)">
+                                <g transform="translate(0 5)">
+                                    <g stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".618">
+                                        <ellipse cx="13" cy="3.712" rx="1.647" ry="1"/>
+                                        <path d="M11.353 3.712L10.847 8.736 11.434 9.421 14.729 9.421 15.365 8.71 14.647 3.712M10.86 8.608L15.254 8.631M14.716 4.191l3.477-.479s.838-.212.852-.802M14.864 5.221c.13-.018 3.439-.444 3.439-.444s.81-.055.838.81"/>
+                                        <path d="M17.825 4.835c.328 1.592 1.7 2.789 3.341 2.789 1.89 0 3.42-1.586 3.42-3.536s-1.53-3.53-3.42-3.53c-1.786 0-3.256 1.416-3.402 3.214M11.173 4.513L7.85 4.987M11.045 5.789L7.825 6.05M7.825 6.05c-.285 1.732-1.767 3.044-3.56 3.044-1.992 0-3.614-1.64-3.614-3.663 0-2.03 1.622-3.67 3.614-3.67 1.853 0 3.372 1.41 3.585 3.226"/>
+                                        <circle cx="13.66" cy="5.428" r="1"/>
+                                        <path d="M11.742 9.421L12.371 10.416 13.66 10.416 14.397 9.421M12.529 10.416H13.529V14.052H12.529zM23.027 2.74s.965 1.588-.176 2.953M22.17 6.286s-.327.16-.621.172"/>
+                                    </g>
+                                    <circle cx="4.25" cy="5.469" r="2.694" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".618"/>
+                                    <path fill="#303030" fill-rule="nonzero" d="M4.25 6.224c-.855 0-1.571-.563-1.819-1.337-.06.185-.1.378-.1.582 0 1.06.86 1.919 1.92 1.919 1.059 0 1.918-.86 1.918-1.919 0-.204-.04-.397-.1-.582-.247.774-.963 1.337-1.819 1.337z"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

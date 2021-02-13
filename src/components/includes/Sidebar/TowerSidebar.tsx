@@ -1,7 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link, useParams } from 'react-router-dom';
-import { ProjectDarkSelectedIcon, MastWhiteIcon } from 'src/components/icons';
+import {
+  ProjectDarkSelectedIcon,
+  MastWhiteIcon,
+  WindDirectionIcon,
+  WindSpeedIcon,
+  TemperatureIcon,
+  PressureIcon,
+} from 'src/components/icons';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { gql, useQuery } from '@apollo/client';
 interface Props {}
@@ -14,18 +21,18 @@ const useStyles = makeStyles((theme) => ({
   },
   sideBar: {
     width: '25rem',
-    padding: '25px 0 29px',
-    paddingTop: '73px',
-    backgroundColor: '#111b30',
+    marginTop: '4.8rem',
+    backgroundColor: theme.palette.primary.light,
+    padding: '1.7rem 0',
   },
   sideHead: {
     color: '#fff',
-    marginTop: '23px',
+    padding: '0 .5rem .5rem 0',
     '& a': {
       textDecoration: 'none',
     },
     '& > li:not(:first-child)': {
-      marginTop: '1.4rem',
+      // marginTop: '1.4rem',
     },
   },
   titleWrap: {
@@ -38,12 +45,18 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'baseline',
   },
   mainTitle: {
+    position: 'relative',
     marginTop: '2rem',
+    marginBottom: '1.3rem',
+    marginRight: '2rem',
+    marginLeft: '2rem',
     fontSize: '15px',
-    textTransform: 'capitalize',
     color: '#ffff',
     fontWeight: 'normal',
-    padding: '0 20px',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: 'normal',
     display: 'flex',
     alignItems: 'center',
     transition: 'all .3s ease-in',
@@ -52,25 +65,60 @@ const useStyles = makeStyles((theme) => ({
     },
     '& svg': {
       marginRight: '1rem',
+      borderRadius: '2px',
     },
   },
+  settingIcon: {
+    position: 'absolute',
+    width: '15px',
+    height: '15px',
+    objectFit: 'contain',
+    right: '0',
+  },
   subTitle: {
+    fontFamily: 'Roboto',
+    position: 'relative',
     fontSize: '15px',
-    textTransform: 'capitalize',
-    color: 'rgb(255,255 ,255,  .8)',
+    color: 'var(--white)',
     fontWeight: 'normal',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: 'normal',
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
-    padding: '7px 20px',
+    padding: '7px 25px',
     transition: 'all .3s ease-in',
-    '&:hover , &.active': {
-      color: '#fff',
-      backgroundColor: 'rgb(255,255 ,255,  .04)',
-      borderLeft: '4px solid #00c48c',
-    },
+    opacity: '.8',
     '& svg': {
-      marginRight: '1rem',
+      marginRight: '.7rem',
+      width: '2rem',
+      height: '2rem',
+      opacity: '.8',
+    },
+    '&::before': {
+      content: '" "',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      bottom: 0,
+      width: '4px',
+      transition: 'all .3s ease-in',
+      // borderLeft: '4px solid #00c48c',
+    },
+    '&.active': {
+      marginBottom: '1.5rem',
+    },
+    '&:hover , &.active': {
+      opacity: 1,
+      '& svg': {
+        opacity: 1,
+      },
+      '&::before': {
+        backgroundColor: '#00c48c',
+      },
+      backgroundColor: 'rgb(255,255 ,255,  .04)',
     },
   },
   viewTitle: {
@@ -91,27 +139,37 @@ const useStyles = makeStyles((theme) => ({
   },
   projectTitle: {},
   subList: {
+    marginTop: '1.5rem',
+    marginBottom: '2rem',
     display: 'block',
-    paddingLeft: '4.5rem !important',
-    '& li': {
+    paddingLeft: '4.5rem',
+    '& li:not(:first-child)': {
       marginTop: '8px',
+    },
+    '& li': {
       lineHeight: '1.71',
       cursor: 'pointer',
       '& .subItem': {
-        color: 'rgb(255,255 ,255,  .7)',
+        fontFamily: 'Roboto',
+        color: 'var(--white)',
         fontSize: '14px',
         letterSpacing: '0.2px',
+        opacity: '0.7',
+        lineHeight: '1.71',
+        transition: 'all .3s ease',
         '&:hover,&.active': {
+          opacity: '1',
           color: theme.palette.secondary.main,
         },
       },
     },
   },
   towerSubList: {
-    '& li': {
-      marginTop: {
-        marginTop: '5px',
-      },
+    padding: '0',
+    marginTop: '1.2rem',
+    marginBottom: '2rem',
+    '& li:not(:first-child)': {
+      marginTop: '.5rem',
     },
   },
   towerSubItem: {
@@ -124,6 +182,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     '& svg': {
       marginRight: '7px',
+      width: 20,
+      height: 20,
     },
     '&:hover': {
       opacity: '1',
@@ -176,7 +236,7 @@ const TowerSideBar = (props: Props) => {
     },
   ];
   const towerSubItem = [
-    ' Wind Speed @ 60m , E',
+    'Wind Speed @ 60m , E',
     'Wind Speed @ 60m , W',
     'Wind Speed @ 50m , E',
     'Wind Speed @ 50m , W',
@@ -190,6 +250,21 @@ const TowerSideBar = (props: Props) => {
     'Pressure @ Ground',
   ];
 
+  const getIcon = (name: string) => {
+    if (name.includes('Wind Speed')) {
+      return <WindSpeedIcon />;
+    } else if (name.includes('Wind Dir')) {
+      return <WindDirectionIcon />;
+    } else if (name.includes('Temperature')) {
+      return <TemperatureIcon />;
+    } else if (name.includes('Pressure')) {
+      return <PressureIcon />;
+    } else {
+      <MastWhiteIcon />;
+    }
+    // return <MastWhiteIcon />;
+  };
+
   return (
     <div className={classes.sideBar}>
       <div className={classes.titleWrap}>
@@ -200,6 +275,11 @@ const TowerSideBar = (props: Props) => {
       <div className={classes.projectTitle}>
         <p className={classes.mainTitle}>
           <ProjectDarkSelectedIcon /> Project name 1
+          <img
+            className={classes.settingIcon}
+            src="/asset/icons/setting-icon.svg"
+            alt="project-setting"
+          />
         </p>
         <ul className={classes.sideHead}>
           {towerName.map((tower, index) => {
@@ -258,7 +338,7 @@ const TowerSideBar = (props: Props) => {
                             return (
                               <li key={j}>
                                 <p className={classes.towerSubItem}>
-                                  <MastWhiteIcon /> {i}
+                                  {getIcon(i)} {i}
                                 </p>
                               </li>
                             );

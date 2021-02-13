@@ -1,3 +1,9 @@
+:root {
+  --dark: #0e1625;
+  --primary-main: #1e2447;
+  --white: #ffffff;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -20,7 +26,6 @@ figcaption,
 blockquote,
 dl,
 dd {
-  padding: 0;
   margin: 0;
 }
 
@@ -33,13 +38,13 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   font-family: 'Roboto', sans-serif;
 }
-img {
+/* img {
   display: block;
   width: 100%;
-}
+} */
 fieldset,
 input {
   border: none;
@@ -54,11 +59,9 @@ button:focus {
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-  padding: 0;
   list-style: none;
 }
 
-/* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }

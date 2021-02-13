@@ -7,7 +7,7 @@ const sidebarStyles = (theme: Theme) => ({
   sideBar: {
     width: '25rem',
     height: '100vh',
-    padding: '25px 20px 29px',
+    padding: '2.5rem 2rem 2rem 2rem',
     paddingTop: '73px',
     backgroundColor: '#111b30',
   },

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <filter id="tawxf2h80a">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" opacity="1">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path d="M0 0H18V18H0z" transform="translate(-45 -284) translate(0 48) translate(0 233) translate(45 3)"/>
+                        </g>
+                        <g filter="url(#tawxf2h80a)" transform="translate(-45 -284) translate(0 48) translate(0 233) translate(45 3)">
+                            <g transform="translate(0 3.6)">
+                                <g stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5">
+                                    <ellipse cx="9.36" cy="2.673" rx="1.186" ry="1"/>
+                                    <path d="M8.174 2.673L7.81 6.29 8.233 6.783 10.605 6.783 11.063 6.271 10.546 2.673M7.819 6.198L10.983 6.214"/>
+                                    <path d="M10.595 3.018l2.504-.345s.603-.153.613-.578M10.702 3.76c.093-.014 2.476-.32 2.476-.32s.583-.04.603.583"/>
+                                    <path d="M12.834 3.481c.236 1.146 1.225 2.008 2.406 2.008 1.36 0 2.462-1.142 2.462-2.546S16.6.403 15.24.403c-1.286 0-2.345 1.018-2.45 2.313M8.044 3.25L5.652 3.591M7.953 4.168L5.634 4.356M5.634 4.356C5.43 5.603 4.362 6.548 3.071 6.548 1.636 6.548.47 5.367.47 3.91c0-1.46 1.167-2.642 2.602-2.642 1.334 0 2.428 1.015 2.58 2.323"/>
+                                    <circle cx="9.835" cy="3.908" r="1"/>
+                                    <path d="M8.454 6.783L8.907 7.5 9.835 7.5 10.366 6.783M9.021 7.5H10.021V10.118H9.021zM16.58 1.973s.694 1.143-.128 2.126M15.962 4.526s-.235.115-.447.123"/>
+                                </g>
+                                <circle cx="3.06" cy="3.938" r="1.94" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+                                <path fill="#303030" fill-rule="nonzero" d="M3.06 4.482c-.616 0-1.131-.406-1.31-.963-.042.133-.071.272-.071.419 0 .763.618 1.381 1.381 1.381s1.382-.618 1.382-1.381c0-.147-.03-.286-.072-.42-.178.558-.694.964-1.31.964z"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -21,15 +21,37 @@ const useStyles = makeStyles((theme) => ({
     '& input': {
       marginTop: '8px',
       width: '100%',
-      padding: '1.2rem',
+      paddingTop: '1.4rem',
+      paddingBottom: '1.3rem',
       fontFamily: 'Roboto',
-      border: 'solid 1px rgb(30 , 36 , 71 , .15)',
       borderRadius: '4px',
       fontSize: '13px',
       textIndent: '4rem',
-      color: theme.palette.primary.main,
+      fontWeight: 'normal',
+      fontStretch: 'normal',
+      fontStyle: 'normal',
+      lineHeight: 'normal',
+      letterSpacing: 'normal',
+      border: `solid 1px rgba(30, 36, 71, 0.15)`,
+      color: 'rgba(30, 36, 71, 0.4)',
+      '&::placeholder': {
+        color: theme.palette.primary.main,
+        opacity: 0.4,
+        fontSize: '1.3rem',
+        fontFamily: 'Roboto',
+        fontWeight: 'normal',
+        fontStretch: 'normal',
+        fontStyle: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: 'normal',
+      },
       '&:focus': {
-        border: 'solid 1px rgba(30, 36, 71, 0.8)',
+        color: 'rgba(30, 36, 71, 0.7)',
+        border: 'solid 1px rgba(30, 36, 71, .8)',
+        boxShadow: '0 2px 12px 6px rgba(0, 0, 0, 0.03)',
+        '&::placeholder': {
+          opacity: '.7',
+        },
         '& ~ span': {
           '& svg': {
             fill: theme.palette.primary.main,
@@ -40,13 +62,8 @@ const useStyles = makeStyles((theme) => ({
   },
   iconSvg: {
     position: 'absolute',
-    top: '15px',
+    top: '2rem',
     left: '1.2rem',
-    '& svg': {
-      width: '30px',
-      height: '30px',
-      fill: 'rgb(30 , 36 , 71 , .15)',
-    },
   },
   visibleHideEye: {
     position: 'absolute',
@@ -64,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '10px',
     display: 'flex',
     alignItems: 'center',
+    fontFamily: 'Roboto',
     '& svg': {
       marginRight: '8px',
     },

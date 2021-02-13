@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 // import AddIcon from '@material-ui/icons/Add';
-import Button from '@material-ui/core/Button';
-import { Grid } from '@material-ui/core';
+// import Button from '@material-ui/core/Button';
+// import { Grid } from '@material-ui/core';
 // import SwapHorizOutlinedIcon from '@material-ui/icons/SwapHorizOutlined';
-// import { Link } from 'react-router-dom';
-// import CloseIcon from '@material-ui/icons/Close';
+import { Link } from 'react-router-dom';
+import CloseIcon from '@material-ui/icons/Close';
 // import DeleteIcon from '@material-ui/icons/Delete';
-import ToggleButton from 'src/components/bits/core/ToggleButton';
-import { gql, useQuery } from '@apollo/client';
-import Breadcrumb from 'src/components/bits/Breadcrumb';
-import SensorCard from 'src/components/common/SensorCard';
-import SidePreview from 'src/components/common/SidePreview';
-import SensorDetail from '../Measurement/SensorDetail';
+// import ToggleButton from 'src/components/bits/core/ToggleButton';
+// import { gql, useQuery } from '@apollo/client';
+// import Breadcrumb from 'src/components/bits/Breadcrumb';
+// import SensorCard from 'src/components/common/SensorCard';
+// import SidePreview from 'src/components/common/SidePreview';
+import SensorBasicDetail from '../SensorBasicDetail';
+import SensorConfiguration from '../SensorConfiguration';
+// import SensorProperty from '../SensorProperty';
+import MountingArrangement from '../MountingArrangement';
+import Calibration from '../Calibration';
+import { TrashSmallIcon, MeasurementPointCircle } from 'src/components/icons';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -46,7 +51,8 @@ const useStyles = makeStyles((theme) => ({
     width: 'calc(100% - 25rem)',
   },
   towerBodyRight: {
-    width: '25rem',
+    // width: '25rem',
+    width: '100%',
     background: '#fff',
     transition: 'all .3s ease-in',
     '&.active': {
@@ -60,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     '& .control-form': {
       padding: '4px 8px',
       border: 'none',
-      marginTop: '4px',
+      marginTop: '5px',
       fontSize: '12px',
       width: '210px',
       overflow: 'hidden',
@@ -181,32 +187,36 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '29px 15px 23px 15px',
+    padding: (props: any) =>
+      props.show ? '25px 25px 20px 25px' : '25px 15px 20px 15px',
+    fontFamily: 'Roboto',
     color: theme.palette.primary.main,
     '& h2': {
       fontSize: '2rem',
       letterSpacing: '0.2px',
       fontWeight: 'bold',
+      marginBottom: '.7rem',
     },
-    '& p': {
+    '& h3': {
+      fontWeight: 'normal',
       fontSize: '13px',
       letterSpacing: '0.1px',
       opacity: '0.6',
     },
   },
 
-  towerRighTitle: {},
+  towerRightTitle: {},
   logoIcon: {
-    boxShadow: '0 0 26px 6px rgba(0, 0, 0, 0.05)',
-    background: '#fff',
-    width: '44px',
-    height: ' 44px',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // boxShadow: '0 0 26px 6px rgba(0, 0, 0, 0.05)',
+    // background: '#fff',
+    // width: '44px',
+    // height: ' 44px',
+    // borderRadius: '50%',
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     '& .icon': {
-      fill: '#303030',
+      // fill: '#303030',
     },
   },
   towerBodyBasic: {
@@ -218,7 +228,10 @@ const useStyles = makeStyles((theme) => ({
     '& h3': {
       color: theme.palette.primary.main,
       fontSize: '15px',
-      letterSpacing: '1.07px',
+      fontWeight: 500,
+      lineHeight: '1.07',
+      letterSpacing: 'normal',
+      marginBottom: '1.4rem',
     },
   },
   towerBodyBasicForm: {
@@ -289,6 +302,23 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+
+    '& .delete': {
+      '& svg': {
+        marginRight: '8px',
+      },
+      '& span': {
+        opacity: '0.7',
+        fontFamily: 'Roboto',
+        fontSize: '11px',
+        fontWeight: 'normal',
+        fontStretch: 'normal',
+        fontStyle: 'normal',
+        lineHeight: '1',
+        letterSpacing: 'normal',
+        color: 'var(--dark-bue)',
+      },
+    },
   },
   towerBodySensorTable: {
     marginTop: '2rem',
@@ -356,190 +386,50 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TOWERQUERY = gql`
-  query {
-    measurement_point @client
-  }
-`;
+interface Props {
+  show?: boolean;
+  handleClose?: (e: any) => void;
+  data?: any;
+}
 
-const MeasurementBody = () => {
-  const classes = useStyles();
-  const [show, setShow] = useState(false);
-  const [activeSensor, setActiveSensor] = useState<number | null>(null);
-  const [activeMeasurementPoint, setActiveMeasurementPoint] = useState<
-    number | null
-  >(null);
-
-  const { data } = useQuery(TOWERQUERY);
-
-  const capUnderSentence = (text: string) => {
-    let wordsArray = text.toLowerCase().split('_');
-    let capsArray: string[] = [];
-    wordsArray.forEach((word: string) => {
-      capsArray.push(word[0].toUpperCase() + word.slice(1));
-    });
-
-    return capsArray.join(' ');
-  };
-
-  console.log(show, 'show is here from there');
+const SensorDetail = ({ show, handleClose, data }: Props) => {
+  const classes = useStyles({ show });
 
   return (
-    <div className={classes.towerBody}>
-      <div className={classes.towerBodyLeft}>
-        <div className={classes.towerHead}>
-          <Breadcrumb
-            breadcrumbList={[
-              { name: 'Project name 2' },
-              { name: 'Tower name 1' },
-              { name: 'Measurements' },
-            ]}
-          />
-          <ToggleButton inactive="List View" active="Timeline" />
-        </div>
-        <div className={classes.towerDetails}>
-          <div className={classes.towerStatus}>
-            <div className={classes.towerStatusName}>
-              <p>1 Active</p>
-              <h3>Measurement Points</h3>
+    <div>
+      <div className={`${classes.towerBodyRight} ${show ? 'active' : ''}`}>
+        {show ? (
+          <span className={classes.towerBodyClose} onClick={handleClose}>
+            <CloseIcon />
+          </span>
+        ) : (
+          ''
+        )}
+        <div>
+          <div className={classes.towerRightHead}>
+            <div className={classes.towerRightTitle}>
+              <h2>Theis #4A</h2>
+              <h3>Wind Speed @ 60m , E</h3>
             </div>
-            <div className={classes.towerStatusBtn}>
-              <Button
-                color="secondary"
-                variant="contained"
-                size="medium"
-                startIcon={'+'}
-                disableElevation
-              >
-                Measurement
-              </Button>
+            <Link to="#" className={classes.logoIcon}>
+              <MeasurementPointCircle className="icon" />
+            </Link>
+          </div>
+          <SensorBasicDetail show={show} />
+          <SensorConfiguration show={show} />
+          <MountingArrangement show={show} />
+          <Calibration show={show} />
+          <div className={classes.towerBodySensor}>
+            <div className={classes.towerBodySensorHead}>
+              <p className="delete">
+                <TrashSmallIcon /> <span> Delete Sensor</span>
+              </p>
             </div>
           </div>
-          <Grid
-            container
-            direction={show ? 'column' : 'row'}
-            spacing={3}
-            className={classes.towerDetailsCard}
-          >
-            <Grid item xs={6} className="items-wrap">
-              {data?.measurement_point
-                ?.slice(0, 7)
-                ?.map((item: any, index: number) => {
-                  const splitDetail = item?.name?.split('_');
-                  const mDetail = splitDetail?.[1]?.split('m');
-                  const mValue = mDetail?.[0];
-                  const mDirection = mDetail?.[1];
-
-                  //mount
-                  const mountList = item?.mounting_arrangement;
-                  const sensorList = item?.sensor;
-
-                  const newMountList =
-                    mountList?.map((i: any) => ({
-                      ...i,
-                      name: `${i?.boom_oem} ${i?.boom_model}`,
-                    })) || [];
-                  const newSensorList =
-                    sensorList?.map((i: any) => ({
-                      ...i,
-                      name: `${i?.oem}`,
-                    })) || [];
-
-                  const sensorTitle = `${capUnderSentence(
-                    item?.measurement_type_id
-                  )} @ ${mValue} m ${mDirection ? `- ${mDirection}` : ''}`;
-                  return (
-                    <SensorCard
-                      title={sensorTitle}
-                      sensorList={[...newMountList, ...newSensorList]}
-                      key={sensorTitle}
-                      activeMeasurementPoint={
-                        activeMeasurementPoint === index + 1 ? true : false
-                      }
-                      activeSensor={activeSensor}
-                      onClick={(sensorIndex: number) => {
-                        if (
-                          sensorIndex === activeSensor &&
-                          activeMeasurementPoint === index + 1
-                        ) {
-                          setActiveMeasurementPoint(null);
-                          setActiveSensor(null);
-                        } else {
-                          setActiveMeasurementPoint(index + 1);
-                          setActiveSensor(sensorIndex);
-                        }
-                      }}
-                    />
-                  );
-                })}
-            </Grid>
-            <Grid item xs={6} className="items-wrap">
-              {data?.measurement_point
-                ?.slice(7, 14)
-                ?.map((item: any, index: number) => {
-                  const splitDetail = item?.name?.split('_');
-                  const mDetail = splitDetail?.[1]?.split('m');
-                  const mValue = mDetail?.[0];
-                  const mDirection = mDetail?.[1];
-
-                  //mount
-                  const mountList = item?.mounting_arrangement;
-                  const sensorList = item?.sensor;
-
-                  const newMountList =
-                    mountList?.map((i: any) => ({
-                      ...i,
-                      name: `${i?.boom_oem} ${i?.boom_model}`,
-                    })) || [];
-                  const newSensorList =
-                    sensorList?.map((i: any) => ({
-                      ...i,
-                      name: `${i?.oem}`,
-                    })) || [];
-                  const sensorTitle = `${capUnderSentence(
-                    item?.measurement_type_id
-                  )} @ ${mValue} m ${mDirection ? `- ${mDirection}` : ''}`;
-
-                  return (
-                    <SensorCard
-                      title={sensorTitle}
-                      sensorList={[...newMountList, ...newSensorList]}
-                      key={sensorTitle}
-                      activeMeasurementPoint={
-                        activeMeasurementPoint === index + 8 ? true : false
-                      }
-                      activeSensor={activeSensor}
-                      onClick={(sensorIndex: number) => {
-                        if (
-                          sensorIndex === activeSensor &&
-                          activeMeasurementPoint === index + 8
-                        ) {
-                          setActiveMeasurementPoint(null);
-                          setActiveSensor(null);
-                        } else {
-                          setActiveMeasurementPoint(index + 8);
-                          setActiveSensor(sensorIndex);
-                        }
-                      }}
-                    />
-                  );
-                })}
-            </Grid>
-          </Grid>
         </div>
       </div>
-      <SidePreview active={show} onClick={() => setShow(true)} expand>
-        <SensorDetail
-          data={{}}
-          show={show}
-          handleClose={(e: any) => {
-            e.stopPropagation();
-            setShow(false);
-          }}
-        />
-      </SidePreview>
     </div>
   );
 };
 
-export default MeasurementBody;
+export default SensorDetail;

@@ -1,28 +1,29 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { ProjectDarkIcon } from 'src/components/icons';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   sideBar: {
     width: '25rem',
-    height: '100vh',
-    padding: '25px 20px 29px',
-    paddingTop: '73px',
-    backgroundColor: '#111b30',
+    marginTop: '4.8rem',
+    backgroundColor: theme.palette.primary.light,
+  },
+  sideBarWrap: {
+    padding: '2.5rem 2rem 2rem 2rem',
   },
   sideHead: {
     color: '#fff',
-    marginTop: '23px',
+    padding: '2rem .5rem .5rem .5rem',
     '& a': {
       textDecoration: 'none',
     },
     '& > li:not(:first-child)': {
-      marginTop: '2rem',
+      marginTop: '1.6rem',
     },
   },
+
   titleWrap: {
     display: 'flex',
     fontFamily: 'Roboto',
@@ -33,21 +34,44 @@ const useStyles = makeStyles((theme) => ({
   },
   mainTitle: {
     fontSize: '1.5rem',
+    fontFamily: 'Roboto',
     textTransform: 'capitalize',
-    color: 'rgb(255,255 ,255,  .56)',
+    color: 'var(--white)',
     fontWeight: 'normal',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: 'normal',
     display: 'flex',
     alignItems: 'center',
     transition: 'all .3s ease-in',
-    '&:hover , &.active': {
-      color: '#fff',
-    },
+    opacity: '.8',
     '& svg': {
       marginRight: '1rem',
+    },
+    '& img': {
+      width: '1.4rem',
+      height: '1.4rem',
+      objectFit: 'contain',
+      margin: '3px 1rem 3px 0',
+      marginRight: '1rem',
+      borderRadius: '2px',
+      opacity: '.8',
+    },
+    '&:hover , &.active': {
+      opacity: '1',
+      '& img': {
+        opacity: '1',
+      },
     },
   },
   rootTitle: {
     fontSize: '16px',
+    fontFamily: 'Roboto',
+    fontWeight: 500,
+    lineHeight: '1.5',
+    letterSpacing: 'normal',
+    color: 'var(--white)',
     textTransform: 'capitalize',
   },
   count: {
@@ -71,25 +95,31 @@ const SideBar = () => {
   ];
   return (
     <div className={classes.sideBar}>
-      <div className={classes.titleWrap}>
-        <span className={classes.rootTitle}>Projects</span>
-        <span className={classes.count}>(8)</span>
+      <div className={classes.sideBarWrap}>
+        <div className={classes.titleWrap}>
+          <span className={classes.rootTitle}>Projects</span>
+          <span className={classes.count}>(8)</span>
+        </div>
+        <ul className={classes.sideHead}>
+          {projectName.map((project, index) => {
+            return (
+              <li key={project.id}>
+                <Link
+                  className={classes.mainTitle}
+                  to={`/${project.name.toLowerCase().replace(/ /g, '-')}`}
+                >
+                  {/* <ProjectDarkIcon /> */}
+                  <img
+                    src="/asset/icons/project-selected-dark.svg"
+                    alt="project"
+                  />
+                  {project.name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-      <ul className={classes.sideHead}>
-        {projectName.map((project, index) => {
-          return (
-            <li key={project.id}>
-              <Link
-                className={classes.mainTitle}
-                to={`/${project.name.toLowerCase().replace(/ /g, '-')}`}
-              >
-                <ProjectDarkIcon />
-                {project.name}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 };
