@@ -1,7 +1,53 @@
 :root {
-  --dark: #0e1625;
+  /* --dark: #0e1625;
   --primary-main: #1e2447;
+  --white: #ffffff; */
+
+  --dark: #0e1625;
   --white: #ffffff;
+  --dark-blue: #1e2447;
+  --error-messages: #ff647c;
+  --main-cta: #00c48c;
+  --darker-blue: #7b96f2;
+  --dark-blue-95: #292e4f;
+  --lighter-blue: #c4d0f9;
+  --dark-blue-90: #333858;
+  --dark-blue-85: #3e4461;
+  --dark-blue-80: #4a4f6b;
+  --faded-blue: #bbc1e4;
+  --page-grey-bg: #f9f9f9;
+  --grey: #c8c8c8;
+  --dark-blue-75: #555973;
+  --dark-blue-70: #5f637c;
+  --dark-blue-65: #6b6e85;
+  --dark-blue-60: #767a8f;
+  --dark-blue-55: #818497;
+  --dark-blue-50: #8b8ea0;
+  --dark-blue-45: #9799a9;
+  --dark-blue-40: #a2a4b2;
+  --dark-blue-30: #b7b9c3;
+  --dark-blue-25: #c3c4cd;
+  --dark-blue-15: #d8d9df;
+  --dark-blue-20: #cecfd6;
+  --dark-blue-10: #e3e4e7;
+  --dark-blue-9: #e6e6e9;
+  --dark-blue-8: #e8e9ec;
+  --dark-blue-7: #eaebed;
+  --dark-blue-5: #eeeff1;
+  --dark-blue-6: #ededef;
+  --dark-blue-4: #f1f1f3;
+  --dark-blue-3: #f3f3f4;
+  --dark-blue-2: #f6f6f6;
+  --dark-blue-1: #f7f7f8;
+  --left-side-bar-bg-color: #111b30;
+  --timeline-darker-blue: #8e9cea;
+  --timeline-lighter-blue: #c2ccff;
+  --timeline-general-maintenance: #fc8761;
+  --timeline-height-change: #53b09f;
+  --styles-brand-theme-accent-action-pri: #37b24d;
+  --colors-15-white-subnav-buttons: rgba(255, 255, 255, 0.15);
+  --styles-dark-light-theme-action-secon: rgba(5, 61, 109, 0.06);
+  --timeline-orientation-change: #b08cf8;
 }
 
 /* Box sizing rules */

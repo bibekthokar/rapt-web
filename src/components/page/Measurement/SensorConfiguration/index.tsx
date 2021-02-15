@@ -55,8 +55,10 @@ const useStyles = makeStyles((theme) => ({
   towerBodySensor: {
     // padding: '20px 15px 30px 15px',
     padding: (props: any) =>
-      props.show ? '25px 25px 30px 25px' : '20px 15px 30px 15px',
+      props.show ? '20px 25px 40px 25px' : '20px 15px 30px 15px',
     borderTop: '1px solid rgb(30 , 36 , 71 , .1)',
+
+    // padding: 20px 25px 40px 25px;
     '& h3': {
       fontSize: '15px',
       letterSpacing: '1.07px',
@@ -113,9 +115,20 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
       },
       '& td': {
+        '& input': {
+          fontFamily: 'Roboto',
+          fontSize: '12px',
+          fontWeight: 'normal',
+          fontStretch: 'normal',
+          fontStyle: 'normal',
+          lineHeight: 'normal',
+          letterSpacing: 'normal',
+          color: 'rgba(0,0,0,.9)',
+        },
         padding: '5px',
         '& .control-form': {
           width: '100%',
+
           '&.date': {
             width: '100px',
           },
@@ -132,7 +145,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   towerBodySensorForm: {
-    marginTop: '8px',
+    marginTop: ({ show }: any) => (show ? '2rem' : '1.8rem'),
+
     '& .control-form_border': {
       width: '220px',
       fontSize: '13px',

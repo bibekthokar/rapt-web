@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const useStyles = makeStyles((theme) => ({
   towerBodyBasic: {
-    padding: '20px 15px 30px 15px',
+    padding: '20px 20px 30px 20px',
     borderTop: '1px solid rgb(30 , 36 , 71 , .1)',
     '&.active': {
       paddingRight: '210px',
@@ -137,7 +137,7 @@ const SensorBasicDetailWrapper = styled.div<any>`
   padding: 20px 15px 30px 15px;
   border-top: 1px solid rgb(30, 36, 71, 0.1);
   h3 {
-    color: var(--primary-main);
+    color: var(--dark-blue);
     font-family: 'Roboto';
     font-size: 15px;
     font-weight: 500;
@@ -149,6 +149,8 @@ const SensorBasicDetailWrapper = styled.div<any>`
   .form-field-list {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .form-field-row {
     display: flex;
@@ -166,7 +168,7 @@ const SensorBasicDetailWrapper = styled.div<any>`
   ${({ show }) =>
     show &&
     `
-    padding-left: 30px;
+    padding: 20px 25px 40px 25px;
     .form-field-right {
         margin-left: 25px;
     }

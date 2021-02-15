@@ -5,8 +5,10 @@ import { PlusGreenIcon } from 'src/components/icons';
 const useStyles = makeStyles((theme) => ({
   towerBodySensor: {
     // padding: '20px 15px 30px 15px',
+    // padding: (props: any) =>
+    //   props.show ? '25px 25px 30px 25px' : '20px 15px 30px 15px',
     padding: (props: any) =>
-      props.show ? '25px 25px 30px 25px' : '20px 15px 30px 15px',
+      props.show ? '20px 25px 40px 25px' : '20px 15px 30px 15px',
     borderTop: '1px solid rgb(30 , 36 , 71 , .1)',
     '& h3': {
       fontSize: '15px',
@@ -50,7 +52,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   towerBodySensorTable: {
-    marginTop: '2rem',
+    marginTop: ({ show }: any) => (show ? '2.6rem' : '1.8rem'),
+
     '& table ': {
       borderCollapse: 'collapse',
       width: '100%',
@@ -65,8 +68,19 @@ const useStyles = makeStyles((theme) => ({
       },
       '& td': {
         padding: '5px',
+        '& input': {
+          fontFamily: 'Roboto',
+          fontSize: '12px',
+          fontWeight: 'normal',
+          fontStretch: 'normal',
+          fontStyle: 'normal',
+          lineHeight: 'normal',
+          letterSpacing: 'normal',
+          color: 'rgba(0,0,0,.9)',
+        },
         '& .control-form': {
           width: '100%',
+
           '&.date': {
             width: '100px',
           },

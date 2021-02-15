@@ -5,8 +5,10 @@ import { PlusGreenIcon, TrashBigIcon, Pdf } from 'src/components/icons';
 const useStyles = makeStyles((theme) => ({
   towerBodySensor: {
     // padding: '20px 15px 30px 15px',
+    // padding: (props: any) =>
+    //   props.show ? '25px 25px 30px 25px' : '20px 15px 30px 15px',
     padding: (props: any) =>
-      props.show ? '25px 25px 30px 25px' : '20px 15px 30px 15px',
+      props.show ? '20px 25px 40px 25px' : '20px 15px 30px 15px',
     borderTop: '1px solid rgb(30 , 36 , 71 , .1)',
     '& h3': {
       fontSize: '15px',
@@ -50,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   towerBodySensorTable: {
-    marginTop: '1.8rem',
+    marginTop: ({ show }: any) => (show ? '2.6rem' : '1.8rem'),
     '& table ': {
       borderCollapse: 'collapse',
       width: '100%',
@@ -72,6 +74,28 @@ const useStyles = makeStyles((theme) => ({
           },
         },
       },
+
+      '& tbody': {
+        '& tr': {
+          '& td': {
+            '& input': {
+              fontFamily: 'Roboto',
+              fontSize: '12px',
+              fontWeight: 'normal',
+              fontStretch: 'normal',
+              fontStyle: 'normal',
+              lineHeight: 'normal',
+              letterSpacing: 'normal',
+              color: 'rgba(0,0,0,.9)',
+            },
+          },
+          '& td:nth-child(2),& td:nth-child(3)': {
+            '& input': {
+              textAlign: 'center',
+            },
+          },
+        },
+      },
     },
     '& .calibration': {
       '& td': {
@@ -84,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
   },
   towerBodySensorForm: {
     marginTop: '8px',
+
     '& .control-form_border': {
       width: '220px',
       fontSize: '13px',
@@ -143,55 +168,63 @@ const Calibration = ({ show }: Props) => {
               <th>Documentation</th>
               <th></th>
             </tr>
-            <tr>
-              <td>
-                <input className="control-form" value="Sensor Calibration 2" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input type="date" className="control-form " value="value" />
-              </td>
-              <td>
-                <label className={classes.pdf}>
-                  <input type="file" />
-                  <Pdf />
-                  CalibrationFile_2.pdf
-                </label>
-              </td>
-              <td>
-                <TrashBigIcon />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input className="control-form" value="Sensor Calibration 1" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input type="date" className="control-form " value="value" />
-              </td>
-              <td>
-                <label className={classes.pdf}>
-                  <input type="file" />
-                  {/* <img src="/asset/img/pdf.svg" alt="pdf" /> */}
-                  <Pdf />
-                  CalibrationFile_1.pdf
-                </label>
-              </td>
-              <td>
-                <TrashBigIcon />
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    className="control-form"
+                    value="Sensor Calibration 2"
+                  />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input type="date" className="control-form " value="value" />
+                </td>
+                <td>
+                  <label className={classes.pdf}>
+                    <input type="file" />
+                    <Pdf />
+                    CalibrationFile_2.pdf
+                  </label>
+                </td>
+                <td>
+                  <TrashBigIcon />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    className="control-form"
+                    value="Sensor Calibration 1"
+                  />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input type="date" className="control-form " value="value" />
+                </td>
+                <td>
+                  <label className={classes.pdf}>
+                    <input type="file" />
+                    {/* <img src="/asset/img/pdf.svg" alt="pdf" /> */}
+                    <Pdf />
+                    CalibrationFile_1.pdf
+                  </label>
+                </td>
+                <td>
+                  <TrashBigIcon />
+                </td>
+              </tr>
+            </tbody>
           </table>
         ) : (
           <div className={classes.towerBodySensorForm}>

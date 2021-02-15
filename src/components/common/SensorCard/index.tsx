@@ -14,7 +14,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    // maxWidth: '42.5rem',
+    maxWidth: '42.5rem',
     minWidth: '42.5rem',
     height: 'fit-content',
     backgroundColor: '#fefefe',
@@ -122,6 +122,7 @@ interface Props {
   activeSensor?: number | null;
   activeMeasurementPoint?: boolean;
   onClick: any;
+  className?: string;
 }
 
 const SensorCard = ({
@@ -130,6 +131,7 @@ const SensorCard = ({
   sensorList,
   activeSensor,
   onClick,
+  className,
 }: Props) => {
   const classes = useStyles();
   const getIcon = (name: string) => {
@@ -150,6 +152,7 @@ const SensorCard = ({
     <div
       className={clsx(
         classes.root,
+        className,
         !activeMeasurementPoint && activeSensor ? classes.inactiveRoot : ''
       )}
     >

@@ -8,13 +8,14 @@ const useStyles = makeStyles((theme) => ({
   sideBar: {
     width: '25rem',
     marginTop: '4.8rem',
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: 'var(--left-side-bar-bg-color)',
+    // backgroundColor: theme.palette.primary.light,
   },
   sideBarWrap: {
     padding: '2.5rem 2rem 2rem 2rem',
   },
   sideHead: {
-    color: '#fff',
+    color: 'var(--white)',
     padding: '2rem .5rem .5rem .5rem',
     '& a': {
       textDecoration: 'none',

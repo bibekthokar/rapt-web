@@ -220,7 +220,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   towerBodyBasic: {
-    padding: '20px 15px 30px 15px',
+    padding: '20px 20px 30px 20px',
     borderTop: '1px solid rgb(30 , 36 , 71 , .1)',
     '&.active': {
       paddingRight: '210px',
@@ -274,7 +274,9 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: ' 0 2px 12px 7px rgba(0, 0, 0, 0.04)',
   },
   towerBodySensor: {
-    padding: '20px 15px 30px 15px',
+    // padding: '20px 15px 30px 15px',
+    padding: (props: any) =>
+      props.show ? '20px 25px 40px 25px' : '20px 15px 30px 15px',
     borderTop: '1px solid rgb(30 , 36 , 71 , .1)',
     '& h3': {
       fontSize: '15px',
@@ -396,36 +398,32 @@ const SensorDetail = ({ show, handleClose, data }: Props) => {
   const classes = useStyles({ show });
 
   return (
-    <div>
-      <div className={`${classes.towerBodyRight} ${show ? 'active' : ''}`}>
-        {show ? (
-          <span className={classes.towerBodyClose} onClick={handleClose}>
-            <CloseIcon />
-          </span>
-        ) : (
-          ''
-        )}
-        <div>
-          <div className={classes.towerRightHead}>
-            <div className={classes.towerRightTitle}>
-              <h2>Theis #4A</h2>
-              <h3>Wind Speed @ 60m , E</h3>
-            </div>
-            <Link to="#" className={classes.logoIcon}>
-              <MeasurementPointCircle className="icon" />
-            </Link>
-          </div>
-          <SensorBasicDetail show={show} />
-          <SensorConfiguration show={show} />
-          <MountingArrangement show={show} />
-          <Calibration show={show} />
-          <div className={classes.towerBodySensor}>
-            <div className={classes.towerBodySensorHead}>
-              <p className="delete">
-                <TrashSmallIcon /> <span> Delete Sensor</span>
-              </p>
-            </div>
-          </div>
+    <div className={`${classes.towerBodyRight} ${show ? 'active' : ''}`}>
+      {show ? (
+        <span className={classes.towerBodyClose} onClick={handleClose}>
+          <CloseIcon />
+        </span>
+      ) : (
+        ''
+      )}
+      <div className={classes.towerRightHead}>
+        <div className={classes.towerRightTitle}>
+          <h2>Theis #4A</h2>
+          <h3>Wind Speed @ 60m , E</h3>
+        </div>
+        <Link to="#" className={classes.logoIcon}>
+          <MeasurementPointCircle className="icon" />
+        </Link>
+      </div>
+      <SensorBasicDetail show={show} />
+      <SensorConfiguration show={show} />
+      <MountingArrangement show={show} />
+      <Calibration show={show} />
+      <div className={classes.towerBodySensor}>
+        <div className={classes.towerBodySensorHead}>
+          <p className="delete">
+            <TrashSmallIcon /> <span> Delete Sensor</span>
+          </p>
         </div>
       </div>
     </div>

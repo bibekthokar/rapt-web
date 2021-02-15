@@ -61,6 +61,7 @@ const useStyles = makeStyles(() => ({
   main: {
     paddingTop: '48px',
     width: 'calc(100% - 250px )',
+    backgroundColor: 'rgba(30,36,71,.03)',
   },
 }));
 

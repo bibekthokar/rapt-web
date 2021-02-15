@@ -77,9 +77,13 @@ const useStyles = makeStyles((theme) => ({
     // background: 'rgba(30, 36, 71, 0.03)',
     // boxShadow: '2px 9px 47px 20px rgba(0, 0, 0, 0.02)',
     // opacity: '0.03',
-    padding: '3rem 3.5rem 7rem 3.5rem',
-    boxShadow: '2px 9px 47px 20px rgba(0, 0, 0, 0.02)',
-    backgroundColor: 'rgba(30,36,71,.03)',
+    // padding: '3rem 3.5rem 7rem 3.5rem',
+    // boxShadow: '2px 9px 47px 20px rgba(0, 0, 0, 0.02)',
+    // backgroundColor: 'rgba(30,36,71,.03)',
+    maxWidth: '87rem',
+    marginTop: '3rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   towerStatus: {
     display: 'flex',
@@ -115,7 +119,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   towerDetailsCard: {
-    '& .items-wrap': {},
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: ({ show }: any) => (show ? 'column' : 'row'),
+
+    '& .items-wrap': {
+      display: 'flex',
+      flexDirection: 'column',
+    },
   },
   towerDetailsItem: {
     background: '#fff',
@@ -363,8 +374,8 @@ const TOWERQUERY = gql`
 `;
 
 const MeasurementBody = () => {
-  const classes = useStyles();
   const [show, setShow] = useState(false);
+  const classes = useStyles({ show });
   const [activeSensor, setActiveSensor] = useState<number | null>(null);
   const [activeMeasurementPoint, setActiveMeasurementPoint] = useState<
     number | null
@@ -415,13 +426,8 @@ const MeasurementBody = () => {
               </Button>
             </div>
           </div>
-          <Grid
-            container
-            direction={show ? 'column' : 'row'}
-            spacing={3}
-            className={classes.towerDetailsCard}
-          >
-            <Grid item xs={6} className="items-wrap">
+          <div className={classes.towerDetailsCard}>
+            <div className="items-wrap">
               {data?.measurement_point
                 ?.slice(0, 7)
                 ?.map((item: any, index: number) => {
@@ -472,8 +478,8 @@ const MeasurementBody = () => {
                     />
                   );
                 })}
-            </Grid>
-            <Grid item xs={6} className="items-wrap">
+            </div>
+            <div className="items-wrap">
               {data?.measurement_point
                 ?.slice(7, 14)
                 ?.map((item: any, index: number) => {
@@ -524,8 +530,8 @@ const MeasurementBody = () => {
                     />
                   );
                 })}
-            </Grid>
-          </Grid>
+            </div>
+          </div>
         </div>
       </div>
       <SidePreview active={show} onClick={() => setShow(true)} expand>
