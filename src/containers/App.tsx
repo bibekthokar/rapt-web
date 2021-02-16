@@ -5,7 +5,7 @@ import Login from './Login';
 const Dashboard = lazy(() => import('./Dashboard'));
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <Router>
@@ -15,12 +15,12 @@ function App() {
             <Route path="/" component={Dashboard} />
           </Suspense>
         ) : (
-            <Route
-              exact
-              path={['/', '/login']}
-              render={() => <Login toggleLogin={setIsLogin} />}
-            />
-          )}
+          <Route
+            exact
+            path={['/', '/login']}
+            render={() => <Login toggleLogin={setIsLogin} />}
+          />
+        )}
       </div>
     </Router>
   );

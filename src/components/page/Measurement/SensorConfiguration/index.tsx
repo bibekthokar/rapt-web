@@ -106,6 +106,22 @@ const useStyles = makeStyles((theme) => ({
       borderCollapse: 'collapse',
       width: '100%',
 
+      '& tbody': {
+        '& tr': {
+          '& td:nth-child(1)': {
+            '& input': {
+              width: '12.3rem',
+              textAlign: 'start',
+            },
+          },
+          '& td:nth-child(5)': {
+            '& input': {
+              width: '10rem',
+            },
+          },
+        },
+      },
+
       '& th': {
         padding: '10px 5px',
         textAlign: 'center',
@@ -115,7 +131,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
         '&:first-child': {
           textAlign: 'left',
-        }
+        },
       },
       '& td': {
         '& input': {
@@ -190,67 +206,77 @@ const SensorConfiguration = ({ show }: Props) => {
               <th>Channel</th>
               <th>Date from</th>
             </tr>
-            <tr>
-              <td>
-                <input className="control-form" value="Config name 2" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input type="date" className="control-form date" value="value" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input className="control-form" value="Config name 2" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input type="date" className="control-form date" value="value" />
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <input className="control-form" value="Config name 2" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    className="control-form date"
+                    value="value"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input className="control-form" value="Config name 2" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    className="control-form date"
+                    value="value"
+                  />
+                </td>
+              </tr>
+            </tbody>
           </table>
         ) : (
-            <div className={classes.towerBodySensorForm}>
-              <input
-                type="text"
-                className="control-form_border"
-                value=" Sensor Config 2 "
-              />
-              <input
-                type="text"
-                className="control-form_border"
-                value=" Sensor Config 1 "
-              />
-            </div>
-          )}
+          <div className={classes.towerBodySensorForm}>
+            <input
+              type="text"
+              className="control-form_border"
+              value=" Sensor Config 2 "
+            />
+            <input
+              type="text"
+              className="control-form_border"
+              value=" Sensor Config 1 "
+            />
+          </div>
+        )}
       </div>
     </div>
   );

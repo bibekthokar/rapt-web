@@ -32,12 +32,26 @@ const useStyles = makeStyles((theme) => ({
   },
   towerHead: {
     backgroundColor: 'var(--white)',
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'space-between',
+    // height: '4.2rem',
+    // fontFamily: 'Roboto',
+    // padding: '0 1.5rem',
+    // maxWidth: '94rem',
+    // marginLeft: 'auto',
+    // marginRight: 'auto',
+  },
+  subTowerHeader: {
+    height: '4.2rem',
+    fontFamily: 'Roboto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    maxWidth: '94rem',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     padding: '0 1.5rem',
-    height: '4.2rem',
-    fontFamily: 'Roboto',
   },
   arrowIcon: {
     width: '8px',
@@ -83,18 +97,18 @@ const useStyles = makeStyles((theme) => ({
     // padding: '3rem 3.5rem 7rem 3.5rem',
     // boxShadow: '2px 9px 47px 20px rgba(0, 0, 0, 0.02)',
     // backgroundColor: 'rgba(30,36,71,.03)',
-    maxWidth: '87rem',
+    maxWidth: '94rem',
     marginTop: '3rem',
-    marginLeft: '3.5rem',
-    marginRight: '3.5rem',
-    [theme.breakpoints.down('md')]: {
-      maxWidth: '80rem',
-
-    },
-    [theme.breakpoints.up('xl')]: {
-      maxWidth: '100%',
-
-    },
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingLeft: '3.5rem',
+    paddingRight: '3.5rem',
+    // [theme.breakpoints.down('md')]: {
+    //   maxWidth: '80rem',
+    // },
+    // [theme.breakpoints.up('xl')]: {
+    //   maxWidth: '100%',
+    // },
   },
   towerStatus: {
     display: 'flex',
@@ -133,21 +147,21 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: ({ show }: any) => (show ? 'column' : 'row'),
-    [theme.breakpoints.down('md')]: {
-      flexDirection: 'column!important' as any,
-    },
+    // [theme.breakpoints.down('md')]: {
+    //   flexDirection: 'column!important' as any,
+    // },
     '& .items-wrap': {
       display: 'flex',
       flexDirection: 'column',
-      [theme.breakpoints.down('md')]: {
-        width: '100%'
-      },
-      [theme.breakpoints.up('xl')]: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        width: 'calc(50% - 20px)'
-      }
+      // [theme.breakpoints.down('md')]: {
+      //   width: '100%'
+      // },
+      // [theme.breakpoints.up('xl')]: {
+      //   flexDirection: 'row',
+      //   flexWrap: 'wrap',
+      //   justifyContent: 'space-between',
+      //   width: 'calc(50% - 20px)'
+      // }
     },
   },
   towerDetailsItem: {
@@ -338,7 +352,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
         '&:first-child': {
           textAlign: 'left',
-        }
+        },
       },
       '& td': {
         padding: '5px',
@@ -418,20 +432,20 @@ const MeasurementBody = () => {
     return capsArray.join(' ');
   };
 
-  console.log(show, 'show is here from there');
-
   return (
     <div className={classes.towerBody}>
       <div className={classes.towerBodyLeft}>
         <div className={classes.towerHead}>
-          <Breadcrumb
-            breadcrumbList={[
-              { name: 'Project name 2' },
-              { name: 'Tower name 1' },
-              { name: 'Measurements' },
-            ]}
-          />
-          <ToggleButton inactive="List View" active="Timeline" />
+          <div className={classes.subTowerHeader}>
+            <Breadcrumb
+              breadcrumbList={[
+                { name: 'Project name 2' },
+                { name: 'Tower name 1' },
+                { name: 'Measurements' },
+              ]}
+            />
+            <ToggleButton inactive="List View" active="Timeline" />
+          </div>
         </div>
         <div className={classes.towerDetails}>
           <div className={classes.towerStatus}>

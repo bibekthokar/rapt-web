@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
-import { PlusGreenIcon } from 'src/components/icons';
+import {
+  DropdownSelectIcon,
+  PlusGreenIcon,
+  CalendarIcon,
+} from 'src/components/icons';
 
 const useStyles = makeStyles((theme) => ({
   towerBodySensor: {
@@ -58,6 +62,42 @@ const useStyles = makeStyles((theme) => ({
       borderCollapse: 'collapse',
       width: '100%',
 
+      '& tbody': {
+        '& tr': {
+          '& td:nth-child(1)': {
+            '& input': {
+              width: '12.3rem !important',
+              textAlign: 'start',
+            },
+          },
+          '& td:nth-child(2)': {
+            position: 'relative',
+            '& select': {
+              width: '6.5rem !important',
+            },
+            '& .select-icon': {
+              position: 'absolute',
+              right: '12px',
+              top: '19px',
+              width: '7px',
+              height: '7px',
+            },
+          },
+          '& td:nth-child(6)': {
+            '& input': {
+              width: '10rem !important',
+              appearance: 'none',
+            },
+          },
+          '& td:nth-child(7)': {
+            '& input': {
+              width: '10rem !important',
+              appearance: 'none',
+            },
+          },
+        },
+      },
+
       '& th': {
         padding: '10px 5px',
         textAlign: 'center',
@@ -67,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
         '&:first-child': {
           textAlign: 'left',
-        }
+        },
       },
       '& td': {
         padding: '5px',
@@ -80,6 +120,11 @@ const useStyles = makeStyles((theme) => ({
           lineHeight: 'normal',
           letterSpacing: 'normal',
           color: 'rgba(0,0,0,.9)',
+        },
+        '& select': {
+          // -moz-appearance: none;
+          // -webkit-appearance: none;
+          appearance: 'none',
         },
         '& .control-form': {
           width: '100%',
@@ -141,98 +186,102 @@ const MountingArrangement = ({ show }: Props) => {
               <th>Date from</th>
               <th>Date To</th>
             </tr>
-            <tr>
-              <td>
-                <input className="control-form" value="A3 | 60 Deg - N" />
-              </td>
-              <td>
-                <select name="type" id="type" className="control-form">
-                  <option value="type">type</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  className="control-form date"
-                  value="value"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  className="control-form date"
-                  value="value"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input className="control-form" value="A3 | 60 Deg - N" />
-              </td>
-              <td>
-                <select name="type" id="type" className="control-form">
-                  <option value="type">type</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input className="control-form" value="value" />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  className="control-form date"
-                  value="value"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  className="control-form date"
-                  value="value"
-                />
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <input className="control-form" value="A3 | 60 Deg - N" />
+                </td>
+                <td>
+                  <select name="type" id="type" className="control-form">
+                    <option value="type">Type</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                  <DropdownSelectIcon className="select-icon" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    className="control-form date"
+                    value="value"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    className="control-form date"
+                    value="value"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input className="control-form" value="A3 | 60 Deg - N" />
+                </td>
+                <td>
+                  <select name="type" id="type" className="control-form">
+                    <option value="type">Type</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                  <DropdownSelectIcon className="select-icon" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input className="control-form" value="value" />
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    className="control-form date"
+                    value="value"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    className="control-form date"
+                    value="value"
+                  />
+                </td>
+              </tr>
+            </tbody>
           </table>
         ) : (
-            <div className={classes.towerBodySensorForm}>
-              <input
-                type="text"
-                className="control-form_border"
-                value=" Arrangement 3 | 60 Deg - N "
-              />
-              <input
-                type="text"
-                className="control-form_border"
-                value=" Arrangement 2 | 30 Deg - W"
-              />
-              <input
-                type="text"
-                className="control-form_border"
-                value=" Arrangement 1 | 30 Deg - E"
-              />
-            </div>
-          )}
+          <div className={classes.towerBodySensorForm}>
+            <input
+              type="text"
+              className="control-form_border"
+              value=" Arrangement 3 | 60 Deg - N "
+            />
+            <input
+              type="text"
+              className="control-form_border"
+              value=" Arrangement 2 | 30 Deg - W"
+            />
+            <input
+              type="text"
+              className="control-form_border"
+              value=" Arrangement 1 | 30 Deg - E"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

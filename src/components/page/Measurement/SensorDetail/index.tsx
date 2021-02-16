@@ -222,7 +222,7 @@ const useStyles = makeStyles((theme) => ({
       width: '44px',
       height: ' 44px',
       overflow: 'hidden',
-      borderRadius: '50%'
+      borderRadius: '50%',
     },
   },
   towerBodyBasic: {
@@ -343,7 +343,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
         '&:first-child': {
           textAlign: 'left',
-        }
+        },
       },
       '& td': {
         padding: '5px',
@@ -413,8 +413,8 @@ const SensorDetail = ({ show, handleClose, data }: Props) => {
           <CloseIcon />
         </span>
       ) : (
-          ''
-        )}
+        ''
+      )}
       <div className={classes.towerRightHead}>
         <div className={classes.towerRightTitle}>
           <h2>Theis #4A</h2>

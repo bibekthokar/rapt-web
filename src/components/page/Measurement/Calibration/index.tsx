@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
         '&:first-child': {
           textAlign: 'left',
-        }
+        },
       },
       '& td': {
         padding: '5px',
@@ -80,6 +80,12 @@ const useStyles = makeStyles((theme) => ({
 
       '& tbody': {
         '& tr': {
+          '& td:nth-child(1)': {
+            '& input': {
+              width: '153px !important',
+              textAlign: 'left',
+            },
+          },
           '& td': {
             '& input': {
               fontFamily: 'Roboto',
@@ -230,19 +236,19 @@ const Calibration = ({ show }: Props) => {
             </tbody>
           </table>
         ) : (
-            <div className={classes.towerBodySensorForm}>
-              <input
-                type="text"
-                className="control-form_border"
-                value=" Sensor Calibration 1  "
-              />
-              <input
-                type="text"
-                className="control-form_border"
-                value=" Sensor Calibration 2"
-              />
-            </div>
-          )}
+          <div className={classes.towerBodySensorForm}>
+            <input
+              type="text"
+              className="control-form_border"
+              value=" Sensor Calibration 1  "
+            />
+            <input
+              type="text"
+              className="control-form_border"
+              value=" Sensor Calibration 2"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
