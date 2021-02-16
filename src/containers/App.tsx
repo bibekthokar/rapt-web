@@ -1,15 +1,26 @@
-import Test from '../components/Test';
+import { useState, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import LoginIndex from '../components/page/login';
-import ProjectDashboard from '../components/page/dashboard/project';
-import TowerIndex from '../components/page/dashboard/project/tower/TowerIndex';
+import Login from './Login';
+
+const Dashboard = lazy(() => import('./Dashboard'));
+
 function App() {
+  const [isLogin, setIsLogin] = useState(true);
+
   return (
     <Router>
       <div className="App">
-        <Route exact path="/project" component={ProjectDashboard} />
-        <Route exact path="/login" component={LoginIndex} />
-        <Route exact path="/project/tower" component={TowerIndex} />
+        {isLogin ? (
+          <Suspense fallback={null}>
+            <Route path="/" component={Dashboard} />
+          </Suspense>
+        ) : (
+            <Route
+              exact
+              path={['/', '/login']}
+              render={() => <Login toggleLogin={setIsLogin} />}
+            />
+          )}
       </div>
     </Router>
   );

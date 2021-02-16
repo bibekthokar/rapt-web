@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+    <defs>
+        <filter id="ka1r5ojaha" width="374.3%" height="374.3%" x="-137.1%" y="-137.1%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="shadowSpreadOuter1"/>
+            <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="13"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+        </filter>
+        <circle id="6b6xvt16xb" cx="17.5" cy="17.5" r="17.5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-1332 -267) translate(1190 48) translate(142 219)">
+                        <use fill="#000" filter="url(#ka1r5ojaha)" xlink:href="#6b6xvt16xb"/>
+                        <use fill="#FFF" xlink:href="#6b6xvt16xb"/>
+                    </g>
+                    <g opacity=".7">
+                        <g>
+                            <g>
+                                <path d="M0 0H19.886V19.886H0z" transform="translate(-1332 -267) translate(1190 48) translate(142 219) translate(7.955 8.75)"/>
+                            </g>
+                            <g fill="#1E2447">
+                                <path d="M4.397 0L0 1.659l4.397 1.659-.393-1.187h9.671l.81 1.048h4.804l-1.177-1.522.675-.872.502-.65h-4.804l-.81 1.048h-9.67L4.397 0zM14.73.896h.492l-.588.761.588.76h-.492l-.589-.76.589-.76zm1.324 0h.492l-.588.761.588.76h-.492l-.589-.76.589-.76zm1.324 0h.492l-.588.761.588.76h-.492l-.589-.76.589-.76z" transform="translate(-1332 -267) translate(1190 48) translate(142 219) translate(7.955 8.75) translate(0 7.292)"/>
+                                <path fill-rule="nonzero" d="M8.993 0.531H9.993V5.851999999999999H8.993z" transform="translate(-1332 -267) translate(1190 48) translate(142 219) translate(7.955 8.75) translate(0 7.292)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

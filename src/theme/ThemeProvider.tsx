@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { createMuiTheme, MuiThemeProvider, Theme } from '@material-ui/core';
 import muiTheme from './muiTheme';
 
 interface ThemeProviderI {
@@ -7,7 +7,7 @@ interface ThemeProviderI {
 }
 
 const ThemeProvider = ({ children }: ThemeProviderI) => {
-  const theme = createMuiTheme(muiTheme('light'));
+  const theme: Theme = createMuiTheme(muiTheme('light') as any);
   return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
 };
 

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+    <defs>
+        <filter id="7nmei8zx0a" width="318.2%" height="318.2%" x="-109.1%" y="-109.1%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="shadowSpreadOuter1"/>
+            <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="13"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+        </filter>
+        <circle id="tzm7c1pemb" cx="22" cy="22" r="22"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351)">
+                                <use fill="#000" filter="url(#7nmei8zx0a)" xlink:href="#tzm7c1pemb"/>
+                                <use fill="#FFF" xlink:href="#tzm7c1pemb"/>
+                            </g>
+                            <g opacity=".7">
+                                <g>
+                                    <path d="M0 0H25V25H0z" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11)"/>
+                                </g>
+                                <g fill-rule="nonzero">
+                                    <path fill="#1E2447" d="M15.607 7.804c0-4.46-3.74-8.045-8.254-7.791C3.555.226.407 3.233.038 7.02c-.337 3.452 1.58 6.544 4.452 7.91 1.389.66 2.296 2.192 2.296 3.73 0 .563.455 1.019 1.018 1.019.562 0 1.017-.456 1.017-1.018 0-1.548.926-3.074 2.321-3.744 2.64-1.269 4.465-3.998 4.465-7.113" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                    <path fill="#1E2447" d="M4.75 13.571c0 .526.03 1.042.082 1.548 1.193.734 1.954 2.134 1.954 3.541 0 .563.455 1.019 1.018 1.019.562 0 1.017-.456 1.017-1.018 0-1.548.926-3.074 2.321-3.744 2.64-1.269 4.465-3.998 4.465-7.113 0-2.107-.836-4.019-2.193-5.423-.06-.002-.12-.006-.182-.006-4.684 0-8.482 5.013-8.482 11.196" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                    <path fill="#ECF0F1" d="M7.804 1.357c-3.555 0-6.447 2.892-6.447 6.447 0 3.554 2.892 6.446 6.447 6.446 3.554 0 6.446-2.892 6.446-6.446 0-3.555-2.892-6.447-6.446-6.447" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                    <path fill="#BDC3C7" d="M12.214 7.804c-.187 0-.339-.152-.339-.34 0-2.245-1.826-4.071-4.071-4.071-2.245 0-4.072 1.826-4.072 4.071 0 .188-.152.34-.34.34-.186 0-.338-.152-.338-.34 0-2.619 2.13-4.75 4.75-4.75 2.619 0 4.75 2.131 4.75 4.75 0 .188-.152.34-.34.34" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                    <path fill="#FF647C" d="M7.125 12.893c-.187 0-.34-.152-.34-.34V9.84c0-.187.153-.339.34-.339.187 0 .34.152.34.34v2.714c0 .187-.153.339-.34.339" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                    <path fill="#FF647C" d="M7.464 10.857h.679c.187 0 .34-.152.34-.34 0-.186-.153-.338-.34-.338h-.679v.678zm.679.679H7.125c-.187 0-.34-.152-.34-.34V9.84c0-.187.153-.339.34-.339h1.018c.561 0 1.018.457 1.018 1.018 0 .561-.457 1.018-1.018 1.018z" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                    <path fill="#BDC3C7" d="M4.41 7.804H3.394c-.187 0-.34-.152-.34-.34 0-.187.153-.339.34-.339H4.41c.187 0 .339.152.339.34 0 .187-.152.339-.34.339M12.214 7.804h-1.018c-.187 0-.339-.152-.339-.34 0-.187.152-.339.34-.339h1.017c.188 0 .34.152.34.34 0 .187-.152.339-.34.339M7.804 4.41c-.188 0-.34-.151-.34-.339V3.054c0-.188.152-.34.34-.34.187 0 .339.152.339.34V4.07c0 .188-.152.34-.34.34M7.084 7.084c-.087 0-.174-.033-.24-.1l-.637-.637c-.133-.133-.133-.347 0-.48.132-.132.347-.132.48 0l.637.638c.132.132.132.347 0 .48-.066.066-.153.099-.24.099M5.421 5.421c-.086 0-.173-.033-.24-.099l-.736-.737c-.133-.132-.133-.347 0-.48.132-.132.347-.132.48 0l.736.737c.133.133.133.347 0 .48-.066.066-.153.1-.24.1M10.203 5.404c-.087 0-.174-.033-.24-.099-.133-.133-.133-.347 0-.48l.72-.72c.132-.132.347-.132.48 0 .132.133.132.348 0 .48l-.72.72c-.067.066-.153.1-.24.1" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                    <path fill="#FF647C" d="M8.821 7.464c0-.562-.455-1.018-1.017-1.018-.563 0-1.018.456-1.018 1.018s.455 1.018 1.018 1.018c.562 0 1.017-.456 1.017-1.018" transform="translate(-1221 -544) translate(1190 48) translate(20 127) translate(0 18) translate(11 351) translate(10 11) translate(4.583 2.5)"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

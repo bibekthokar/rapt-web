@@ -10,6 +10,32 @@ const muiTheme = (mode: ThemeType) => ({
     primary: themePalette(mode).palette.primary,
     secondary: themePalette(mode).palette.secondary,
   },
+  breakpoints: {
+    values: {
+      laptop: 1360,
+
+    },
+  },
+  overrides: {
+    MuiButton: {
+      root: {
+        textTransform: 'capitalize',
+        fontFamily: 'Roboto',
+        color: 'var(--white)',
+        fontWeight: 'normal',
+        fontStretch: 'normal',
+        fontStyle: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: 'normal',
+        height: '3rem',
+        fontSize: '1.3rem',
+      },
+      sizeLarge: {
+        height: '4.5rem',
+        fontSize: '1.5rem',
+      },
+    },
+  },
 });
 
 export default muiTheme;

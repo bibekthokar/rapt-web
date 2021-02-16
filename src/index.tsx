@@ -4,22 +4,54 @@ import { BrowserRouter } from 'react-router-dom';
 import {
   ApolloClient,
   ApolloProvider,
-  // createHttpLink,
+  gql,
+  createHttpLink,
   InMemoryCache,
 } from '@apollo/client';
 
+import data from './api/data.json';
 import './index.css';
 import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
 import ThemeProvider from './theme/ThemeProvider';
 
-// const httpLink = createHttpLink({
-//   uri: 'https://www.test.com',
-// });
+const httpLink = createHttpLink({
+  uri: 'https://www.test.com',
+});
+
+const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-  uri: "https://www.test.com",
-  cache: new InMemoryCache(),
+  link: httpLink,
+  cache,
+  // cache: new InMemoryCache({
+  //   typePolicies: {
+  //     Tower: {
+  //       fields: {
+  //         measurement: {
+  //           read() {
+  //             return data;
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // }),
+});
+
+export const TOWERQUERY = gql`
+  query {
+    measurement @client
+    measurement_point @client
+  }
+`;
+
+cache.writeQuery({
+  query: TOWERQUERY,
+  data: {
+    measurement: data,
+    measurement_point: data.measurement_location[0].measurement_point,
+  },
 });
 
 ReactDOM.render(

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+    <defs>
+        <filter id="thpfkqvgga" width="374.3%" height="374.3%" x="-137.1%" y="-137.1%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="shadowSpreadOuter1"/>
+            <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="13"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+        </filter>
+        <circle id="54ba22kljb" cx="17.5" cy="17.5" r="17.5"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g transform="translate(-1264 -198) translate(1190 48) translate(20 127) translate(0 18) translate(54 5)">
+                                <use fill="#000" filter="url(#thpfkqvgga)" xlink:href="#54ba22kljb"/>
+                                <use fill="#FFF" xlink:href="#54ba22kljb"/>
+                            </g>
+                            <g opacity=".7">
+                                <g>
+                                    <g>
+                                        <path d="M0 0H19.886V19.886H0z" transform="translate(-1264 -198) translate(1190 48) translate(20 127) translate(0 18) translate(54 5) translate(7.955 8.75)"/>
+                                    </g>
+                                    <g fill-rule="nonzero">
+                                        <g fill="#1E2447">
+                                            <path d="M2.844.018c-.818 0-1.48.656-1.48 1.464v10.097l.74-.278V1.525c0-.404.331-.768.74-.768s.74.364.74.768V11.3l.74.278V1.482c0-.809-.662-1.464-1.48-1.464z" transform="translate(-1264 -198) translate(1190 48) translate(20 127) translate(0 18) translate(54 5) translate(7.955 8.75) translate(5.966 1.989)"/>
+                                            <path d="M3.584 10.876v.768c.783.295 1.34 1.044 1.34 1.921 0 1.135-.931 2.056-2.08 2.056s-2.08-.92-2.08-2.056c0-.877.557-1.626 1.34-1.92v-.77c-1.199.322-2.08 1.404-2.08 2.69 0 1.54 1.262 2.787 2.82 2.787 1.558 0 2.82-1.247 2.82-2.787 0-1.286-.881-2.368-2.08-2.69z" transform="translate(-1264 -198) translate(1190 48) translate(20 127) translate(0 18) translate(54 5) translate(7.955 8.75) translate(5.966 1.989)"/>
+                                        </g>
+                                        <g>
+                                            <path fill="#5D5D5D" d="M2.92.4c0 .204-.162.369-.364.369H.37C.17.769.006.604.006.4.006.197.169.032.37.032h2.186c.202 0 .365.165.365.368z" transform="translate(-1264 -198) translate(1190 48) translate(20 127) translate(0 18) translate(54 5) translate(7.955 8.75) translate(5.966 1.989) translate(4.998 2.068)"/>
+                                            <path fill="#1E2447" d="M2.92.4c0 .204-.162.369-.364.369H.37C.17.769.006.604.006.4.006.197.169.032.37.032h2.186c.202 0 .365.165.365.368zM2.192 2.226c0 .203-.163.368-.364.368H.37c-.201 0-.364-.165-.364-.368 0-.204.163-.369.364-.369h1.458c.201 0 .364.165.364.369zM2.192 5.877c0 .203-.163.368-.364.368H.37c-.201 0-.364-.165-.364-.368 0-.204.163-.369.364-.369h1.458c.201 0 .364.165.364.369zM2.92 4.051c0 .204-.162.369-.364.369H.37c-.201 0-.364-.165-.364-.369 0-.203.163-.368.364-.368h2.186c.202 0 .365.165.365.368zM2.92 7.702c0 .203-.162.368-.364.368H.37c-.201 0-.364-.165-.364-.368 0-.204.163-.369.364-.369h2.186c.202 0 .365.165.365.369z" transform="translate(-1264 -198) translate(1190 48) translate(20 127) translate(0 18) translate(54 5) translate(7.955 8.75) translate(5.966 1.989) translate(4.998 2.068)"/>
+                                        </g>
+                                        <path fill="#1E2447" d="M3.205 6.568c0-.2-.159-.363-.354-.363h-.015c-.195 0-.354.162-.354.363v5.451c-.729.17-1.276.84-1.276 1.639 0 .927.735 1.681 1.638 1.681.903 0 1.637-.754 1.637-1.681 0-.8-.547-1.469-1.276-1.639V6.568z" transform="translate(-1264 -198) translate(1190 48) translate(20 127) translate(0 18) translate(54 5) translate(7.955 8.75) translate(5.966 1.989)"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

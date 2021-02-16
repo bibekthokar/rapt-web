@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
-import TowerSvg from '../../../../../bits/icons/TowerSvg';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { TowerIcon } from 'src/components/icons';
 interface Props { }
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '23px',
         '& a': {
             textDecoration: 'none',
+            lineHeight: '20px'
         },
         '& > li:not(:first-child)': {
             marginTop: '1.4rem'
@@ -107,7 +108,7 @@ const TowerSideBar = (props: Props) => {
                             return (
                                 <li key={index}>
                                     <Link className={classes.subTitle} to="#">
-                                        <TowerSvg />   {items}
+                                        <TowerIcon />   {items}
                                     </Link>
 
                                 </li>

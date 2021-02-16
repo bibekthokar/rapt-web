@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0.7rem 2rem',
+        padding: '0 1.5rem',
+        height: '4.2rem',
         fontFamily: 'Roboto',
         '& p': {
             fontSize: '13px',
