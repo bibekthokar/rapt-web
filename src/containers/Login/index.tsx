@@ -27,6 +27,15 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    [theme.breakpoints.down('lg')]: {
+      flexBasis: '62rem',
+    }
+  },
+  loginRight: {
+    [theme.breakpoints.down('lg')]: {
+      maxWidth: 'calc(100% - 62rem)',
+      flexBasis: 'calc(100% - 62rem)',
+    },
   },
   formRoot: {
     flexGrow: 1,
@@ -193,7 +202,7 @@ const Login = ({ toggleLogin }: LoginProps) => {
           </div>
           <p className={classes.copyright}>Met Monitoring ©2021 </p>
         </Grid>
-        <Grid item xs={undefined} sm={undefined} md={6} lg={7}>
+        <Grid item xs={undefined} sm={undefined} md={6} lg={7} className={classes.loginRight}>
           <Hidden smDown>
             <div className={classes.image}>
               <img src="/asset/img/login-cover.jpg" alt="windTower" />
