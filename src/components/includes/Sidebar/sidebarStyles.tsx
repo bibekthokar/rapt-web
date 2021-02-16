@@ -51,7 +51,6 @@ const sidebarStyles = (theme: Theme) => ({
     fontWeight: 'normal',
     display: 'flex',
     alignItems: 'center',
-    lineHeight: '20px',
     cursor: 'pointer',
     padding: '7px 20px',
     transition: 'all .3s ease-in',
