@@ -108,11 +108,14 @@ const useStyles = makeStyles((theme) => ({
 
       '& th': {
         padding: '10px 5px',
-        textAlign: 'left',
+        textAlign: 'center',
         fontSize: '12px',
         marginBottom: '10px',
         color: 'rgba(0 , 0 , 0 , .3)',
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
+        '&:first-child': {
+          textAlign: 'left',
+        }
       },
       '& td': {
         '& input': {

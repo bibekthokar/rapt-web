@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     background: '#fff',
     transition: 'all .3s ease-in',
     '&.active': {
-      width: '720px',
+      width: '695px',
       position: 'absolute',
       right: '0',
       height: '100%',

@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     background: '#fff',
     transition: 'all .3s ease-in',
     '&.active': {
-      width: '720px',
+      width: '695px',
       position: 'absolute',
       right: '0',
       height: '100%',
@@ -336,11 +336,14 @@ const useStyles = makeStyles((theme) => ({
 
       '& th': {
         padding: '10px 5px',
-        textAlign: 'left',
+        textAlign: 'center',
         fontSize: '12px',
         marginBottom: '10px',
         color: 'rgba(0 , 0 , 0 , .3)',
         borderBottom: ' solid 1px rgb(30 , 36 , 71 , .1)',
+        '&:first-child': {
+          textAlign: 'left',
+        }
       },
       '& td': {
         padding: '5px',
