@@ -10,12 +10,6 @@ const muiTheme = (mode: ThemeType) => ({
     primary: themePalette(mode).palette.primary,
     secondary: themePalette(mode).palette.secondary,
   },
-  breakpoints: {
-    values: {
-      laptop: 1360,
-
-    },
-  },
   overrides: {
     MuiButton: {
       root: {
