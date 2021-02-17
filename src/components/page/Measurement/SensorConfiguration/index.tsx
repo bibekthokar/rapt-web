@@ -140,6 +140,7 @@ const useStyles = makeStyles((theme) => ({
 
           '&.date': {
             width: '107px',
+            padding: '4px 0px 4px 8px'
           },
         },
       },
@@ -224,7 +225,7 @@ const SensorConfiguration = ({ show }: Props) => {
                 <input className="control-form" value="value" />
               </td>
               <td>
-                <input type="date" className="control-form date" value="value" />
+                <input type="date" className="control-form date" value="value" placeholder="dd-mm-yyyy" />
               </td>
             </tr>
             <tr>
@@ -247,7 +248,7 @@ const SensorConfiguration = ({ show }: Props) => {
                 <input className="control-form" value="value" />
               </td>
               <td>
-                <input type="date" className="control-form date" value="value" />
+                <input type="date" className="control-form date" value="value" placeholder="dd-mm-yyyy" />
               </td>
             </tr>
           </table>

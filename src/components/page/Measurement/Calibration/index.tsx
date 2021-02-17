@@ -80,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
           width: '100%',
           '&.date': {
             width: '107px',
+            padding: '4px 0px 4px 8px'
           },
         },
       },
