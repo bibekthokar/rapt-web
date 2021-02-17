@@ -16,6 +16,7 @@ import { ReactComponent as ResourceDataPlatform } from './resource-data-platform
 // import { ReactComponent as TemperatureIcon } from './temperature-icon.svg';
 import { ReactComponent as BreadcrumbArrowIcon } from './breadcrumb-arrow.svg';
 import { ReactComponent as PlusGreenIcon } from './plus-green.svg';
+import { ReactComponent as PlusWhiteIcon } from './plus-white.svg';
 import { ReactComponent as PressureIcon } from './pressure.svg';
 import { ReactComponent as WindDirectionIcon } from './wind-direction.svg';
 import { ReactComponent as WindSpeedIcon } from './wind-speed.svg';
@@ -56,6 +57,7 @@ export {
   TemperatureIcon,
   BreadcrumbArrowIcon,
   PlusGreenIcon,
+  PlusWhiteIcon,
   PressureMIcon,
   WindDirectionMIcon,
   WindSpeedMIcon,

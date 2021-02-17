@@ -278,6 +278,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '4px',
     zIndex: theme.spacing(2),
     boxShadow: ' 0 2px 12px -2px rgba(0, 0, 0, 0.04)',
+    transition: 'all .3s ease-in',
+    '&:hover svg': {
+      opacity: '1'
+    },
+    '& svg': {
+      opacity: '0.7'
+    }
   },
   towerBodySensor: {
     // padding: '20px 15px 30px 15px',

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { TowerIcon } from 'src/components/icons';
+import ButtonAdd from 'src/components/bits/core/button/ButtonAdd';
 interface Props { }
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -117,6 +118,7 @@ const TowerSideBar = (props: Props) => {
                     }
                 </ul>
             </div>
+            <ButtonAdd />
         </div >
     )
 };

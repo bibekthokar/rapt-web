@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import ButtonAdd from 'src/components/bits/core/button/ButtonAdd';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -122,6 +123,7 @@ const SideBar = () => {
           })}
         </ul>
       </div>
+      <ButtonAdd />
     </div>
   );
 };

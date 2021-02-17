@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '0 1.5rem',
+        margin: '0 auto',
         height: '4.2rem',
         fontFamily: 'Roboto',
         '& p': {
