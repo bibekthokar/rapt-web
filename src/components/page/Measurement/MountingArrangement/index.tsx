@@ -81,17 +81,28 @@ const useStyles = makeStyles((theme) => ({
           letterSpacing: 'normal',
           color: 'rgba(0,0,0,.9)',
         },
+        '&:first-child': {
+          '& .control-form': {
+            width: '123px',
+            textAlign: 'left',
+          }
+        },
         '& .control-form': {
           width: '100%',
 
           '&.date': {
-            width: '112px',
+            width: '107px',
           },
         },
       },
     },
     '& .calibration': {
       '& td': {
+        '&:first-child': {
+          '& .control-form': {
+            width: '153px'
+          }
+        },
         '& .control-form': {
           height: '34px',
           lineHeight: '34px',
@@ -113,6 +124,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '10px',
     },
   },
+  headerSpecial: {
+    width: '75px'
+  }
 }));
 
 interface Props {
@@ -134,8 +148,8 @@ const MountingArrangement = ({ show }: Props) => {
           <table>
             <tr>
               <th>Display Name</th>
-              <th>Type</th>
-              <th>Boom Orientation</th>
+              <th className={classes.headerSpecial}>Type</th>
+              <th className={classes.headerSpecial}>Boom Orientation</th>
               <th>Boom OEM</th>
               <th>Boom Model</th>
               <th>Date from</th>

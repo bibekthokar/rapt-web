@@ -212,18 +212,22 @@ const SensorBasicDetail = ({ show }: SensorBasicProps) => {
               type="date"
               className="input-field"
               label="Date From"
-              defaultValue="12332442"
-              placeholder="dd-mm-yyyy"
+              defaultValue="01-01-2018"
+              // formTarget="dd-mm-yyyy"
+              value="01-01-2018"
+              min="1997-01-01"
+              max="2030-12-31"
               suffixIcon={<CalendarIcon />}
             />
             <InputField
               type="date"
               className="input-field"
               label="Date To"
-              defaultValue="10-10-2018"
-              placeholder="dd-mm-yyyy"
+              defaultValue="05-08-2019"
+              // formTarget="dd-mm-yyyy"
               min="1997-01-01"
               max="2030-12-31"
+              value="05-08-2019"
               suffixIcon={<CalendarIcon />}
             />
           </div>

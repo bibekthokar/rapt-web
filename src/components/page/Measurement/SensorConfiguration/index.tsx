@@ -129,17 +129,28 @@ const useStyles = makeStyles((theme) => ({
           color: 'rgba(0,0,0,.9)',
         },
         padding: '5px',
+        '&:first-child': {
+          '& .control-form': {
+            width: '123px',
+            textAlign: 'left'
+          }
+        },
         '& .control-form': {
           width: '100%',
 
           '&.date': {
-            width: '100px',
+            width: '107px',
           },
         },
       },
     },
     '& .calibration': {
       '& td': {
+        '&:first-child': {
+          '& .control-form': {
+            width: '153px'
+          }
+        },
         '& .control-form': {
           height: '34px',
           lineHeight: '34px',
@@ -162,6 +173,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '10px',
     },
   },
+  headerLogger: {
+    width: '100px'
+  }
 }));
 
 interface Props {
@@ -186,7 +200,7 @@ const SensorConfiguration = ({ show }: Props) => {
               <th>Slope</th>
               <th>Offset</th>
               <th>Units</th>
-              <th>Logger height</th>
+              <th className={classes.headerLogger}>Logger height</th>
               <th>Channel</th>
               <th>Date from</th>
             </tr>

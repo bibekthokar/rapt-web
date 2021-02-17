@@ -140,3 +140,11 @@ select {
     scroll-behavior: auto !important;
   }
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  display: block;
+  background: url('./components/icons/calendar.svg') no-repeat;
+  width: 13px;
+  height: 13px;
+  border-width: thin;
+}

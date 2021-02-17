@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import { MastWhiteIcon, ResourceDataPlatform } from 'src/components/icons';
+import { AlertIcon, MastWhiteIcon, ResourceDataPlatform } from 'src/components/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,12 +12,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     marginRight: '6px',
   },
+  headerMenu: {
+    marginLeft: '3.5rem',
+    display: 'flex',
+    align: 'center'
+  },
   tower: {
-    marginLeft: '5.2rem',
     display: 'block',
     padding: '.8rem 2.2rem',
     textAlign: 'center',
-    background: 'rgb(255,255 ,255,  .05)',
+    transition: 'all .3s ease-in',
+    '&.active,&:hover': {
+      background: 'rgb(255,255 ,255,  .05)',
+    }
   },
   title: {
     fontSize: '14px',
@@ -29,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     fontStretch: 'normal',
     fontStyle: 'normal',
     lineHeight: 'normal',
-    marginRight: '5.2rem',
+    marginRight: '1.9rem',
   },
   dashboardWrap: {},
   header: {
@@ -84,11 +91,18 @@ const Header = () => {
           <Typography variant="h6" className={classes.title}>
             <ResourceDataPlatform />
           </Typography>
-          <Link to="/">
-            <picture className={classes.tower}>
-              <MastWhiteIcon />
-            </picture>
-          </Link>
+          <div className={classes.headerMenu}>
+            <Link to="/">
+              <picture className={`${classes.tower} active`}>
+                <MastWhiteIcon />
+              </picture>
+            </Link>
+            <Link to="/">
+              <picture className={classes.tower}>
+                <AlertIcon />
+              </picture>
+            </Link>
+          </div>
         </div>
         <div className={classes.userName}>
           <Link to="#">A</Link>
