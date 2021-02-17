@@ -5,7 +5,7 @@ import Login from './Login';
 const Dashboard = lazy(() => import('./Dashboard'));
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <Router>

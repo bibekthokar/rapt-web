@@ -1,3 +1,4 @@
+import ComingSoon from 'src/components/ComingSoon';
 import Layout from 'src/components/includes/Layout';
 
 const ProjectMap = () => {
@@ -9,7 +10,7 @@ const ProjectMap = () => {
         width="100%"
         height="100%"
       ></iframe> */}
-      <h1>Hello World</h1>
+      <ComingSoon />
     </Layout>
   );
 };

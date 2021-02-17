@@ -1,10 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
-import {
-  DropdownSelectIcon,
-  PlusGreenIcon,
-  CalendarIcon,
-} from 'src/components/icons';
+import { DropdownSelectIcon, PlusGreenIcon } from 'src/components/icons';
 
 const useStyles = makeStyles((theme) => ({
   towerBodySensor: {
@@ -74,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
             position: 'relative',
             '& select': {
               width: '6.5rem !important',
+              appearance: 'none',
             },
             '& .select-icon': {
               position: 'absolute',
