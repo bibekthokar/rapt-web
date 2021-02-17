@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  loginContainer: {
+    flexWrap: 'unset',
+  },
   loginForm: {
     // padding: '3.5rem',
     paddingTop: '6.1rem',
@@ -87,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: '2rem',
-    opacity: '0.9'
+    opacity: '0.9',
   },
   copyright: {
     fontSize: '11px',
@@ -104,6 +107,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     flexGrow: 1,
+    minWidth: '57rem',
   },
 }));
 
@@ -138,7 +142,7 @@ const Login = ({ toggleLogin }: LoginProps) => {
   };
   return (
     <section className={classes.root}>
-      <Grid container spacing={0}>
+      <Grid container spacing={0} className={classes.loginContainer}>
         <Grid item xs={12} sm={12} md={6} lg={5} className={classes.loginForm}>
           <div className={classes.loginWrap}>
             <Link className={classes.logo}>
@@ -157,7 +161,7 @@ const Login = ({ toggleLogin }: LoginProps) => {
                     inputRef={register({ required: 'required' })}
                     placeholder="Your email address here"
                     error={errors?.email?.message}
-                  // error="The input is not a valid email!"
+                    // error="The input is not a valid email!"
                   />
                   <InputField
                     name="password"
