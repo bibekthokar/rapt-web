@@ -299,8 +299,8 @@ const useStyles = makeStyles((theme) => ({
   towerBodyClose: {
     position: 'absolute',
     top: '23px',
-    left: '-34px',
-    padding: '6px',
+    left: '-28px',
+    padding: '12px',
     cursor: 'pointer',
     background: '#fff',
     borderRadius: '4px',
@@ -356,16 +356,29 @@ const useStyles = makeStyles((theme) => ({
       },
       '& td': {
         padding: '5px',
+        '&:first-child': {
+          '& .control-form': {
+            width: '123px',
+            textAlign: 'left'
+          }
+        },
         '& .control-form': {
           width: '100%',
+
           '&.date': {
-            width: '112px',
+            width: '107px',
+            padding: '4px 0px 4px 8px'
           },
         },
       },
     },
     '& .calibration': {
       '& td': {
+        '&:first-child': {
+          '& .control-form': {
+            width: '153px'
+          }
+        },
         '& .control-form': {
           height: '34px',
           lineHeight: '34px',

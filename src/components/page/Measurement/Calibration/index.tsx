@@ -70,10 +70,17 @@ const useStyles = makeStyles((theme) => ({
       },
       '& td': {
         padding: '5px',
+        '&:first-child': {
+          '& .control-form': {
+            width: '123px',
+            textAlign: 'left'
+          }
+        },
         '& .control-form': {
           width: '100%',
           '&.date': {
-            width: '112px',
+            width: '107px',
+            padding: '4px 0px 4px 8px'
           },
         },
       },
@@ -87,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
             },
           },
           '& td': {
+
             '& input': {
               fontFamily: 'Roboto',
               fontSize: '12px',
@@ -108,6 +116,11 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .calibration': {
       '& td': {
+        '&:first-child': {
+          '& .control-form': {
+            width: '153px'
+          }
+        },
         '& .control-form': {
           height: '34px',
           lineHeight: '34px',
@@ -192,7 +205,7 @@ const Calibration = ({ show }: Props) => {
                   <input className="control-form" value="value" />
                 </td>
                 <td>
-                  <input type="date" className="control-form " value="value" />
+                  <input type="date" className="control-form " value="value" placeholder="dd-mm-yyyy" />
                 </td>
                 <td>
                   <label className={classes.pdf}>

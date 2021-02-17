@@ -13,9 +13,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    maxWidth: '42.5rem',
-    minWidth: '42.5rem',
+    width: '42.5rem',
     height: 'fit-content',
     backgroundColor: '#fefefe',
     // boxShadow: '2px 9px 47px 20px rgba(0, 0, 0, 0.02)',
@@ -25,10 +23,6 @@ const useStyles = makeStyles((theme) => ({
     //   maxWidth: '100%',
     //   minWidth: '100%',
     // },
-    // [theme.breakpoints.up('xl')]: {
-    //   maxWidth: 'calc(50% - 20px)',
-    //   minWidth: 'calc(50% - 20px)',
-    // }
   },
   inactiveRoot: {
     opacity: '0.7',

@@ -1,6 +1,8 @@
 import { ReactComponent as ErrorIcon } from './error-icon.svg';
 import { ReactComponent as TowerIcon } from './tower-icon.svg';
 import { ReactComponent as PdfIcon } from './pdf-icon.svg';
+import { ReactComponent as CrossIcon } from './cross.svg';
+import { ReactComponent as AlertIcon } from './alert.svg';
 import { ReactComponent as ProjectDarkIcon } from './project-dark.svg';
 import { ReactComponent as ProjectDarkSelectedIcon } from './project-selected-dark.svg';
 import { ReactComponent as MastWhiteIcon } from './mast-color-white.svg';
@@ -16,6 +18,7 @@ import { ReactComponent as ResourceDataPlatform } from './resource-data-platform
 // import { ReactComponent as TemperatureIcon } from './temperature-icon.svg';
 import { ReactComponent as BreadcrumbArrowIcon } from './breadcrumb-arrow.svg';
 import { ReactComponent as PlusGreenIcon } from './plus-green.svg';
+import { ReactComponent as PlusWhiteIcon } from './plus-white.svg';
 import { ReactComponent as PressureIcon } from './pressure.svg';
 import { ReactComponent as WindDirectionIcon } from './wind-direction.svg';
 import { ReactComponent as WindSpeedIcon } from './wind-speed.svg';
@@ -55,7 +58,10 @@ export {
   WindSpeedIcon,
   TemperatureIcon,
   BreadcrumbArrowIcon,
+  CrossIcon,
+  AlertIcon,
   PlusGreenIcon,
+  PlusWhiteIcon,
   PressureMIcon,
   WindDirectionMIcon,
   WindSpeedMIcon,

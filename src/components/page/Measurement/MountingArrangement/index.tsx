@@ -121,22 +121,29 @@ const useStyles = makeStyles((theme) => ({
           letterSpacing: 'normal',
           color: 'rgba(0,0,0,.9)',
         },
-        '& select': {
-          // -moz-appearance: none;
-          // -webkit-appearance: none;
-          appearance: 'none',
+        '&:first-child': {
+          '& .control-form': {
+            width: '123px',
+            textAlign: 'left',
+          },
         },
         '& .control-form': {
           width: '100%',
 
           '&.date': {
-            width: '112px',
+            width: '107px',
+            padding: '4px 0px 4px 8px',
           },
         },
       },
     },
     '& .calibration': {
       '& td': {
+        '&:first-child': {
+          '& .control-form': {
+            width: '153px',
+          },
+        },
         '& .control-form': {
           height: '34px',
           lineHeight: '34px',
@@ -157,6 +164,9 @@ const useStyles = makeStyles((theme) => ({
     '& .control-form_border:not(:first-child)': {
       marginTop: '10px',
     },
+  },
+  headerSpecial: {
+    width: '75px',
   },
 }));
 
@@ -179,8 +189,8 @@ const MountingArrangement = ({ show }: Props) => {
           <table>
             <tr>
               <th>Display Name</th>
-              <th>Type</th>
-              <th>Boom Orientation</th>
+              <th className={classes.headerSpecial}>Type</th>
+              <th className={classes.headerSpecial}>Boom Orientation</th>
               <th>Boom OEM</th>
               <th>Boom Model</th>
               <th>Date from</th>

@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
       width: '210px',
       overflow: 'hidden',
       outline: 'none',
+      opacity: '0.9',
       lineHeight: '1.33',
       background: 'rgba(30 , 36 , 71 , 0.06)',
       borderRadius: '2px',

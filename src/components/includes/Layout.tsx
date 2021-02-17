@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
     marginRight: '6px',
   },
   tower: {
-    marginLeft: '5.2rem',
+    marginLeft: '3.5rem',
     display: 'block',
     padding: '1.1rem 2.2rem',
     textAlign: 'center',

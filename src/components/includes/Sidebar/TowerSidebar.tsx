@@ -11,6 +11,7 @@ import {
 } from 'src/components/icons';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { gql, useQuery } from '@apollo/client';
+import ButtonAdd from 'src/components/bits/core/button/ButtonAdd';
 interface Props { }
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '4.8rem',
     backgroundColor: theme.palette.primary.light,
     padding: '1.7rem 0',
+    position: 'relative'
   },
   sideHead: {
     color: '#fff',
@@ -372,6 +374,7 @@ const TowerSideBar = (props: Props) => {
           })}
         </ul>
       </div>
+      <ButtonAdd />
     </div>
   );
 };
