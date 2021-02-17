@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 // import { Grid } from '@material-ui/core';
 // import SwapHorizOutlinedIcon from '@material-ui/icons/SwapHorizOutlined';
 import { Link } from 'react-router-dom';
-import CloseIcon from '@material-ui/icons/Close';
 // import DeleteIcon from '@material-ui/icons/Delete';
 // import ToggleButton from 'src/components/bits/core/ToggleButton';
 // import { gql, useQuery } from '@apollo/client';
@@ -17,7 +16,11 @@ import SensorConfiguration from '../SensorConfiguration';
 // import SensorProperty from '../SensorProperty';
 import MountingArrangement from '../MountingArrangement';
 import Calibration from '../Calibration';
-import { TrashSmallIcon, MeasurementPointCircle, CrossIcon } from 'src/components/icons';
+import {
+  TrashSmallIcon,
+  MeasurementPointCircle,
+  CrossIcon,
+} from 'src/components/icons';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -280,11 +283,11 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: ' 0 2px 12px -2px rgba(0, 0, 0, 0.04)',
     transition: 'all .3s ease-in',
     '&:hover svg': {
-      opacity: '1'
+      opacity: '1',
     },
     '& svg': {
-      opacity: '0.7'
-    }
+      opacity: '0.7',
+    },
   },
   towerBodySensor: {
     // padding: '20px 15px 30px 15px',
@@ -357,14 +360,14 @@ const useStyles = makeStyles((theme) => ({
         '&:first-child': {
           '& .control-form': {
             width: '123px',
-            textAlign: 'left'
-          }
+            textAlign: 'left',
+          },
         },
         '& .control-form': {
           width: '100%',
           '&.date': {
             width: '107px',
-            padding: '4px 0px 4px 8px'
+            padding: '4px 0px 4px 8px',
           },
         },
       },
@@ -373,8 +376,8 @@ const useStyles = makeStyles((theme) => ({
       '& td': {
         '&:first-child': {
           '& .control-form': {
-            width: '153px'
-          }
+            width: '153px',
+          },
         },
         '& .control-form': {
           height: '34px',

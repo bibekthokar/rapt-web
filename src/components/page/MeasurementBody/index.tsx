@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
-import { Grid } from '@material-ui/core';
-// import SwapHorizOutlinedIcon from '@material-ui/icons/SwapHorizOutlined';
-// import { Link } from 'react-router-dom';
-// import CloseIcon from '@material-ui/icons/Close';
-// import DeleteIcon from '@material-ui/icons/Delete';
 import ToggleButton from 'src/components/bits/core/ToggleButton';
 import { gql, useQuery } from '@apollo/client';
 import Breadcrumb from 'src/components/bits/Breadcrumb';
@@ -359,15 +353,15 @@ const useStyles = makeStyles((theme) => ({
         '&:first-child': {
           '& .control-form': {
             width: '123px',
-            textAlign: 'left'
-          }
+            textAlign: 'left',
+          },
         },
         '& .control-form': {
           width: '100%',
 
           '&.date': {
             width: '107px',
-            padding: '4px 0px 4px 8px'
+            padding: '4px 0px 4px 8px',
           },
         },
       },
@@ -376,8 +370,8 @@ const useStyles = makeStyles((theme) => ({
       '& td': {
         '&:first-child': {
           '& .control-form': {
-            width: '153px'
-          }
+            width: '153px',
+          },
         },
         '& .control-form': {
           height: '34px',
