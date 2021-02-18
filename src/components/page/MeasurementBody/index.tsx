@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
   towerBodyRight: {
     position: 'relative',
     width: '25rem',
+    height: '100%',
     background: '#fff',
     transition: 'all .3s ease-in',
     '&.active': {

@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
   towerBodyRight: {
     boxShadow: ' 0 2px 12px 7px rgba(0, 0, 0, 0.02)',
     width: '100%',
+    height: '100%',
     background: '#fff',
     transition: 'all .3s ease-in',
     '&.active': {
@@ -435,8 +436,8 @@ const SensorDetail = ({ show, handleClose, data }: Props) => {
           <CrossIcon />
         </span>
       ) : (
-        ''
-      )}
+          ''
+        )}
       <div className={classes.towerRightHead}>
         <div className={classes.towerRightTitle}>
           <h2>Theis #4A</h2>

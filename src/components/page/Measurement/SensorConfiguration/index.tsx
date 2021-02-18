@@ -244,7 +244,8 @@ const SensorConfiguration = ({ show }: Props) => {
                 <input
                   type="date"
                   className="control-form date"
-                  value="value"
+                  value="05-08-2019"
+                  name="date"
                   placeholder="dd-mm-yyyy"
                 />
               </td>
@@ -272,26 +273,27 @@ const SensorConfiguration = ({ show }: Props) => {
                 <input
                   type="date"
                   className="control-form date"
-                  value="value"
+                  value="05-08-2019"
+                  name="date"
                   placeholder="dd-mm-yyyy"
                 />
               </td>
             </tr>
           </table>
         ) : (
-          <div className={classes.towerBodySensorForm}>
-            <input
-              type="text"
-              className="control-form_border"
-              value=" Sensor Config 2 "
-            />
-            <input
-              type="text"
-              className="control-form_border"
-              value=" Sensor Config 1 "
-            />
-          </div>
-        )}
+            <div className={classes.towerBodySensorForm}>
+              <input
+                type="text"
+                className="control-form_border"
+                value=" Sensor Config 2 "
+              />
+              <input
+                type="text"
+                className="control-form_border"
+                value=" Sensor Config 1 "
+              />
+            </div>
+          )}
       </div>
     </div>
   );
